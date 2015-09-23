@@ -1,2 +1,2 @@
 # ThePillar
-Cross-platform C++ framework for game development
+Cross-platform C++ framework for game
