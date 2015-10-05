@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FD95B4FB-381C-4399-AEAA-17737648997F}</ProjectGuid>
+    <RootNamespace>hello_sdl_pc</RootNamespace>
+    <ProjectName>CharacterController</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\Src;..\..\..\Dependencies\Include;..\..\..\Dependencies\Include\Glew;..\..\..\Dependencies\Include\JsonCpp;..\..\..\Dependencies\Include\SDL;..\..\..\Dependencies\Include\SDL_image</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\Dependencies\Win32;..\..\..\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;PillarVS2015_d.lib;glew32_d.lib;glew32s_d.lib;SDL2_d.lib;SDL2main_d.lib;SDL2_image_d.lib;RocketCore_d.lib;RocketControls_d.lib;RocketDebugger_d.lib;lib_json_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\Src;..\..\..\Dependencies\Include;..\..\..\Dependencies\Include\Glew;..\..\..\Dependencies\Include\JsonCpp;..\..\..\Dependencies\Include\SDL;..\..\..\Dependencies\Include\SDL_image</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\Dependencies\Win32;..\..\..\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PillarVS2015.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;RocketCore.lib;RocketControls.lib;RocketDebugger.lib;opengl32.lib;glu32.lib;glew32.lib;lib_json.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Task\Move.hpp" />
+    <ClInclude Include="Source\Task\SpartanAnim.hpp" />
+    <ClInclude Include="Source\AppInclude.h" />
+    <ClInclude Include="Source\Scene\SceneWelcome.hpp" />
+    <ClInclude Include="Source\WonderApp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\Character\Archer.png" />
+    <Image Include="Resource\Character\ogre.png" />
+    <Image Include="Resource\Character\Spartan.png" />
+    <Image Include="Resource\Character\Spartans.png" />
+    <Image Include="Resource\DemoTile.png" />
+    <Image Include="Resource\DemoTileGreen.png" />
+    <Image Include="Resource\high_scores_alien_1.tga" />
+    <Image Include="Resource\high_scores_alien_2.tga" />
+    <Image Include="Resource\high_scores_alien_3.tga" />
+    <Image Include="Resource\high_scores_defender.tga" />
+    <Image Include="Resource\invader.tga" />
+    <Image Include="Resource\present.tga" />
+    <Image Include="Resource\cloud_01.png" />
+    <Image Include="Resource\cloud_02.png" />
+    <Image Include="Resource\cobra.png" />
+    <Image Include="Resource\PirateShip.png" />
+    <Image Include="Resource\pirate_bottle.png" />
+    <Image Include="Resource\Shared\SpriteFont.png" />
+    <Image Include="Resource\ShipSteer.png" />
+    <Image Include="Resource\ship_fire.png" />
+    <Image Include="Resource\viking_ship.png" />
+    <Image Include="Resource\viking_ship_collision.png" />
+    <Image Include="Resource\wave_01.png" />
+    <Image Include="Resource\wave_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Character\Spartans.json" />
+    <None Include="Resource\cursor.rml" />
+    <None Include="Resource\demo.rml" />
+    <None Include="Resource\invader.rcss" />
+    <None Include="Resource\inventory.rml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resource\rkt.rcss" />
+    <None Include="Resource\sample.rml" />
+    <None Include="Resource\Shared\LibRocket\simple.rml" />
+    <None Include="Resource\staticInvader.rcss" />
+    <None Include="Resource\staticWindow.rml" />
+    <None Include="Resource\tutorial.rcss" />
+    <None Include="Resource\window.rml" />
+    <None Include="Resource\MapEditor\HelloMap.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resource\Shared\LibRocket\Font\Delicious-Bold.otf" />
+    <Font Include="Resource\Shared\LibRocket\Font\Delicious-BoldItalic.otf" />
+    <Font Include="Resource\Shared\LibRocket\Font\Delicious-Italic.otf" />
+    <Font Include="Resource\Shared\LibRocket\Font\Delicious-Roman.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\WonderApp.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
