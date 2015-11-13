@@ -5,13 +5,11 @@
 *.suo
 *.user
 *.sln.docstates
-
 # Build results
 
 [Dd]ebug/
 [Rr]elease/
 x64/
-build/
 [Bb]in/
 [Oo]bj/
 
@@ -151,3 +149,6 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+
+# VC projects
+*.vcxproj.filters
