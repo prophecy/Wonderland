@@ -43,6 +43,8 @@
 #include <stdio.h>
 #include <string>
 
+using namespace std;
+
 //Shader loading utility programs
 void printProgramLog(GLuint program)
 {
@@ -108,6 +110,42 @@ void printShaderLog(GLuint shader)
 	}
 }
 
+string LoadTextFile(string path)
+{
+	// String to store content
+	char* document = NULL;
+
+	// Load JSON from file
+	SDL_RWops* file = SDL_RWFromFile(path.c_str(), "r");
+
+	Sint64 sz = file->size(file) + 1;
+
+	if (file != NULL)
+	{
+		// Allocate buffer
+		document = (char*)malloc((size_t)sz);
+		memset(document, 0x0, sz);
+
+		// Read
+		if (SDL_RWread(file, document, (size_t)sz, 1) > 0)
+		{
+			DebugLog("Read JSON from: " + path + " has been finished");
+		}
+
+		// Close file
+		SDL_RWclose(file);
+	}
+
+	// Copy it to string
+	string outDocument = document;
+
+	// Free document
+	free(document);
+	document = NULL;
+
+	return outDocument;
+}
+
 //Graphics program
 GLuint gProgramID = 0;
 GLint gVertexPos2DLocation = -1;
@@ -124,14 +162,18 @@ bool InitGL()
 	//Create vertex shader
 	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
 
+	string vertShadder = LoadTextFile("Resource/Shader/sample.vert");
+	const GLchar* vertexShaderSource = vertShadder.c_str();
+
 	//Get vertex source
-	const GLchar* vertexShaderSource[] =
-	{
-		"#version 140\nin vec2 LVertexPos2D; void main() { gl_Position = vec4( LVertexPos2D.x, LVertexPos2D.y, 0, 1 ); }"
-	};
+// 	const GLchar* vertexShaderSource[] =
+// 	{
+// 		"#version 140\nin vec2 LVertexPos2D; void main() { gl_Position = vec4( LVertexPos2D.x, LVertexPos2D.y, 0, 1 ); }"
+// 	};
+// 	
 
 	//Set vertex source
-	glShaderSource(vertexShader, 1, vertexShaderSource, NULL);
+	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
 
 	//Compile vertex source
 	glCompileShader(vertexShader);
@@ -155,13 +197,16 @@ bool InitGL()
 		GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 
 		//Get fragment source
-		const GLchar* fragmentShaderSource[] =
-		{
-			"#version 140\nout vec4 LFragment; void main() { LFragment = vec4( 1.0, 1.0, 1.0, 1.0 ); }"
-		};
+		string fragShadder = LoadTextFile("Resource/Shader/sample.frag");
+		const GLchar* fragmentShaderSource = fragShadder.c_str();
+
+// 		const GLchar* fragmentShaderSource[] =
+// 		{
+// 			"#version 140\nout vec4 LFragment; void main() { LFragment = vec4( 1.0, 1.0, 1.0, 1.0 ); }"
+// 		};
 
 		//Set fragment source
-		glShaderSource(fragmentShader, 1, fragmentShaderSource, NULL);
+		glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
 
 		//Compile fragment source
 		glCompileShader(fragmentShader);
