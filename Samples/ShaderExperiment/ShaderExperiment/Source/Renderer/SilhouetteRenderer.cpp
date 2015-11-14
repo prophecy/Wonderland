@@ -33,166 +33,256 @@
 #include "Pillar/Foundation/Portal/Portal.h"
 #include "Pillar/WonderLang.h"
 #include "Pillar/Configuration.h"
+#include "Pillar/Florist/Florist.h"
 
-void SilhouetteRenderer::Create()	
+//Using SDL, SDL OpenGL, GLEW, standard IO, and strings
+#include <SDL.h>
+#include <gl/glew.h>
+#include <SDL_opengl.h>
+#include <gl/glu.h>
+#include <stdio.h>
+#include <string>
+
+//Shader loading utility programs
+void printProgramLog(GLuint program)
 {
-	//-----------------------------------------------------------------------------------------------
-	// Create window
-	SDL_Init(SDL_INIT_VIDEO);
-	sdlWindow = SDL_CreateWindow(
-		"Wonderland",
-		20, 20, windowWidth, windowHeight,
-		SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
-
-	// Create GL context for SDL
-	SDL_GLContext glcontext = SDL_GL_CreateContext(sdlWindow);
-
-	// Search to get "opengl" driver
-	int oglIdx = -1;
-	int nRD = SDL_GetNumRenderDrivers();
-
-	for (int i = 0; i < nRD; i++)
+	//Make sure name is shader
+	if (glIsProgram(program))
 	{
-		SDL_RendererInfo info;
-		if (!SDL_GetRenderDriverInfo(i, &info))
+		//Program log length
+		int infoLogLength = 0;
+		int maxLength = infoLogLength;
+
+		//Get info string length
+		glGetProgramiv(program, GL_INFO_LOG_LENGTH, &maxLength);
+
+		//Allocate string
+		char* infoLog = new char[maxLength];
+
+		//Get info log
+		glGetProgramInfoLog(program, maxLength, &infoLogLength, infoLog);
+		if (infoLogLength > 0)
 		{
-			if (!strcmp(info.name, "opengl"))
+			//Print Log
+			DebugLog(infoLog);
+		}
+
+		//Deallocate string
+		delete[] infoLog;
+	}
+	else
+	{
+		DebugLog("Name " + TO_STR(program) + " is not a program");
+	}
+}
+
+void printShaderLog(GLuint shader)
+{
+	//Make sure name is shader
+	if (glIsShader(shader))
+	{
+		//Shader log length
+		int infoLogLength = 0;
+		int maxLength = infoLogLength;
+
+		//Get info string length
+		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &maxLength);
+
+		//Allocate string
+		char* infoLog = new char[maxLength];
+
+		//Get info log
+		glGetShaderInfoLog(shader, maxLength, &infoLogLength, infoLog);
+		if (infoLogLength > 0)
+		{
+			//Print Log
+			DebugLog(infoLog);
+		}
+
+		//Deallocate string
+		delete[] infoLog;
+	}
+	else
+	{
+		DebugLog("Name " + TO_STR(shader) + " is not a shader");
+	}
+}
+
+//Graphics program
+GLuint gProgramID = 0;
+GLint gVertexPos2DLocation = -1;
+GLuint gVBO = 0;
+GLuint gIBO = 0;
+
+bool InitGL()
+{
+	//Success flag
+	bool success = true;
+
+	//Generate program
+	gProgramID = glCreateProgram();
+	//Create vertex shader
+	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+
+	//Get vertex source
+	const GLchar* vertexShaderSource[] =
+	{
+		"#version 140\nin vec2 LVertexPos2D; void main() { gl_Position = vec4( LVertexPos2D.x, LVertexPos2D.y, 0, 1 ); }"
+	};
+
+	//Set vertex source
+	glShaderSource(vertexShader, 1, vertexShaderSource, NULL);
+
+	//Compile vertex source
+	glCompileShader(vertexShader);
+
+	//Check vertex shader for errors
+	GLint vShaderCompiled = GL_FALSE;
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &vShaderCompiled);
+	if (vShaderCompiled != GL_TRUE)
+	{
+		DebugLog("Unable to compile vertex shader " + TO_STR(vertexShader) + "!");
+		printShaderLog(vertexShader);
+		success = false;
+	}
+	else
+	{
+		//Attach vertex shader to program
+		glAttachShader(gProgramID, vertexShader);
+
+
+		//Create fragment shader
+		GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+		//Get fragment source
+		const GLchar* fragmentShaderSource[] =
+		{
+			"#version 140\nout vec4 LFragment; void main() { LFragment = vec4( 1.0, 1.0, 1.0, 1.0 ); }"
+		};
+
+		//Set fragment source
+		glShaderSource(fragmentShader, 1, fragmentShaderSource, NULL);
+
+		//Compile fragment source
+		glCompileShader(fragmentShader);
+
+		//Check fragment shader for errors
+		GLint fShaderCompiled = GL_FALSE;
+		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &fShaderCompiled);
+		if (fShaderCompiled != GL_TRUE)
+		{
+			DebugLog("Unable to compile fragment shader " + TO_STR(fragmentShader) + "!");
+			printShaderLog(fragmentShader);
+			success = false;
+		}
+		else
+		{
+			//Attach fragment shader to program
+			glAttachShader(gProgramID, fragmentShader);
+
+
+			//Link program
+			glLinkProgram(gProgramID);
+
+			//Check for errors
+			GLint programSuccess = GL_TRUE;
+			glGetProgramiv(gProgramID, GL_LINK_STATUS, &programSuccess);
+			if (programSuccess != GL_TRUE)
 			{
-				oglIdx = i;
+				DebugLog("Error linking program " + TO_STR(gProgramID) + "!");
+				printProgramLog(gProgramID);
+				success = false;
+			}
+			else
+			{
+				//Get vertex attribute location
+				gVertexPos2DLocation = glGetAttribLocation(gProgramID, "LVertexPos2D");
+				if (gVertexPos2DLocation == -1)
+				{
+					DebugLog("LVertexPos2D is not a valid glsl program variable!");
+					success = false;
+				}
+				else
+				{
+					//Initialize clear color
+					glClearColor(0.f, 0.f, 0.f, 1.f);
+
+					//VBO data
+					GLfloat vertexData[] =
+					{
+						-0.5f, -0.5f,
+						0.5f, -0.5f,
+						0.5f,  0.5f,
+						-0.5f,  0.5f
+					};
+
+					//IBO data
+					GLuint indexData[] = { 0, 1, 2, 3 };
+
+					//Create VBO
+					glGenBuffers(1, &gVBO);
+					glBindBuffer(GL_ARRAY_BUFFER, gVBO);
+					glBufferData(GL_ARRAY_BUFFER, 2 * 4 * sizeof(GLfloat), vertexData, GL_STATIC_DRAW);
+
+					//Create IBO
+					glGenBuffers(1, &gIBO);
+					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, gIBO);
+					glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indexData, GL_STATIC_DRAW);
+				}
 			}
 		}
 	}
 
-	// Create SDL renderer ( OpenGL )
-	sdlRenderer = SDL_CreateRenderer(
-		sdlWindow, oglIdx,
-		SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
+	return success;
+}
 
+void SilhouetteRenderer::Create()	
+{
+	//Use OpenGL 3.1 core
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+
+	// Create SDL from base class
+	SDLRenderer::Create();
+
+	// Init GLEW ( The OpenGL extensions )
+	GLenum err = glewInit();
+
+	// Error~
+	if (err != GLEW_OK)
+		DebugLog("GLEW ERROR: " + ToString(glewGetErrorString(err)));
+
+	InitGL();
 }
 
 void SilhouetteRenderer::Render()	
 {
-	// Draw background with solid color
-	u8* canvasColor = Configuration::GetPtr()->GetCanvasColor();
-	SDL_SetRenderDrawColor(sdlRenderer, canvasColor[0], canvasColor[1], canvasColor[2], canvasColor[3]);
-	SDL_RenderClear(sdlRenderer);
+	//Clear color buffer
+	glClear(GL_COLOR_BUFFER_BIT);
 
-	// Batch render
-	BatchRender();
+	//Bind program
+	glUseProgram(gProgramID);
 
-	// Update the screen!
-	SDL_RenderPresent(sdlRenderer);
-}
+	//Enable vertex position
+	glEnableVertexAttribArray(gVertexPos2DLocation);
 
-void SilhouetteRenderer::BatchRender()
-{
-	// Draw from batch
-	for (u32 i = 0; i < Wonderlang::renderBatch.size(); ++i)
-	{
-		ImageEntity* entImg = Wonderlang::renderBatch[i];
+	//Set vertex data
+	glBindBuffer(GL_ARRAY_BUFFER, gVBO);
+	glVertexAttribPointer(gVertexPos2DLocation, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLfloat), NULL);
 
-		if (!entImg->isVisible)
-			continue;
+	//Set index data and render
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, gIBO);
+	glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_INT, NULL);
 
-		// Get canvas
-		Canvas* canvas = Portal::GetPtr()->GetCanvas();
+	//Disable vertex position
+	glDisableVertexAttribArray(gVertexPos2DLocation);
 
-		// Get canvas rect
-		const rect2f canvasRect = canvas->GetCanvasRectOnScreenSpace();
-		const size2f canvasScale = canvas->GetScaleOnScreenSpace();
+	//Unbind program
+	glUseProgram(NULL);
 
-		// Calculate dest image
-		rect2f destImg;
-		destImg.origin.set((f32)canvasRect.origin.data()[0] +
-			entImg->position.data()[0] * canvasScale.data()[0] -
-			entImg->pivot.data()[0] * canvasScale.data()[0],
-			(f32)canvasRect.origin.data()[1] +
-			(f32)canvasRect.size.data()[1] -
-			entImg->position.data()[1] * canvasScale.data()[1] -
-			entImg->pivot.data()[1] * canvasScale.data()[1]
-			);
-
-		// Apply alpha
-		Uint8 alpha = (Uint8)(255.0f * entImg->alpha);
-		SDL_SetTextureAlphaMod(entImg->sprite.texture, alpha);
-
-		// Blit sprite onto screen
-
-		// Render if type is image sprite
-		if (entImg->rttiPtr == &ImageFontEntity::rtti ||
-			entImg->rttiPtr == &ImageSpriteEntity::rtti ||
-			entImg->rttiPtr == &ImageAtlasEntity::rtti)
-		{
-			ImageSpriteEntity* imgSprite = (ImageSpriteEntity*)entImg;
-
-			SDL_Rect srcRect;
-			srcRect.x = (s32)imgSprite->spriteRectCurrent.origin.data()[0];
-			srcRect.y = (s32)imgSprite->spriteRectCurrent.origin.data()[1];
-			srcRect.w = (s32)imgSprite->spriteRectCurrent.size.data()[0];
-			srcRect.h = (s32)imgSprite->spriteRectCurrent.size.data()[1];
-
-			destImg.size.set(
-				imgSprite->spriteRectCurrent.size.data()[0] * entImg->scale * canvasScale[0],
-				imgSprite->spriteRectCurrent.size.data()[1] * entImg->scale * canvasScale[1]
-				);
-
-			// Copy to SDL_Rect
-			SDL_Rect destRect;
-			destRect.x = (s32)destImg.origin.data()[0];
-			destRect.y = (s32)destImg.origin.data()[1];
-			destRect.w = (s32)destImg.size.data()[0];
-			destRect.h = (s32)destImg.size.data()[1];
-
-			// Render
-			SDL_Point center;
-			center.x = (int)(entImg->pivot.data()[0] * canvasScale.data()[0]);
-			center.y = (int)(entImg->pivot.data()[1] * canvasScale.data()[1]);
-			SDL_RendererFlip flip = (SDL_RendererFlip)entImg->flip;
-
-			SDL_RenderCopyEx(sdlRenderer,
-				entImg->sprite.texture,
-				&srcRect,
-				&destRect,
-				entImg->radian * 180.0f / PI,
-				&center,
-				flip);
-		}
-		else if (entImg->rttiPtr == &ImageEntity::rtti)
-		{
-			destImg.size.set((f32)entImg->sprite.w * entImg->scale * canvasScale[0],
-				(f32)entImg->sprite.h * entImg->scale * canvasScale[1]);
-
-			// Copy to SDL_Rect
-			SDL_Rect destRect;
-			destRect.x = (s32)destImg.origin.data()[0];
-			destRect.y = (s32)destImg.origin.data()[1];
-			destRect.w = (s32)destImg.size.data()[0];
-			destRect.h = (s32)destImg.size.data()[1];
-
-
-			// Render
-			SDL_Point center;
-			center.x = (int)(entImg->pivot.data()[0] * canvasScale.data()[0]);
-			center.y = (int)(entImg->pivot.data()[1] * canvasScale.data()[1]);
-			SDL_RendererFlip flip = (SDL_RendererFlip)entImg->flip;
-
-			SDL_RenderCopyEx(sdlRenderer,
-				entImg->sprite.texture,
-				NULL,
-				&destRect,
-				entImg->radian * 180.0f / PI,
-				&center,
-				flip);
-
-			SDL_RenderCopy(sdlRenderer, entImg->sprite.texture, NULL, &destRect);
-		}
-		else
-		{
-			Portal::GetPtr()->GetLog()->DebugLog("Does not support with Codename: " + ImageEntity::rtti.codeName);
-		}
-	}
-
-	// todo: in aspect fit mode, clip canvas
+	//Update screen
+	SDL_GL_SwapWindow(sdlWindow);
 }
 
 void SilhouetteRenderer::Destroy()
