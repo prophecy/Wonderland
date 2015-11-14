@@ -179,11 +179,6 @@ int BuildWonderlandUp(int argc, char *argv[], IApplication* specificApplication)
 
 		silkRoad->PollEventFinish();
 
-		// Draw background with solid color
-		u8* canvasColor = Configuration::GetPtr()->GetCanvasColor();
-		SDL_SetRenderDrawColor(sdlRenderer, canvasColor[0], canvasColor[1], canvasColor[2], canvasColor[3]);
-		SDL_RenderClear(sdlRenderer);
-		
 		// Update resource ( Should be in sub thread )
 		runLoop.OnUpdateResourceThread();
 
@@ -198,14 +193,29 @@ int BuildWonderlandUp(int argc, char *argv[], IApplication* specificApplication)
 		// Update runloop!
 		runLoop.OnUpdate();
 
-		// Render things
-		runLoop.OnRender();
+		// ---------------------------------------------------------------------------------------
+		// RENDER START
+		if (rendererType != Configuration::Renderertype::RENDERER_TYPE_USER_DEFINED)
+		{
+			// Draw background with solid color
+			u8* canvasColor = Configuration::GetPtr()->GetCanvasColor();
+			SDL_SetRenderDrawColor(sdlRenderer, canvasColor[0], canvasColor[1], canvasColor[2], canvasColor[3]);
+			SDL_RenderClear(sdlRenderer);
 
-		// Batch render
-		renderer->Render();
+			// Batch render
+			renderer->Render();
 
-		// Update the screen!
-		SDL_RenderPresent(sdlRenderer);
+			// Update the screen!
+			SDL_RenderPresent(sdlRenderer);
+		}
+		else
+		{
+			// Batch render
+			renderer->Render();
+
+		}
+		// RENDER ENDED
+		// ---------------------------------------------------------------------------------------
 	}
 	// ---------------------------------------------------------------------------------------
 	// ---------------------------------------------------------------------------------------

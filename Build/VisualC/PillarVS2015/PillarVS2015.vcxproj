@@ -148,7 +148,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Src\Pillar\BuildWonderlandUp.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\Canvas\Canvas.cpp" />
+    <ClCompile Include="..\..\..\Src\Pillar\Configuration.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\Entity\CollisionEntity.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\Entity\EntityRTTI.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\Entity\ImageAtlasEntity.cpp" />
@@ -187,6 +189,7 @@
     <ClCompile Include="..\..\..\Src\Pillar\Renderer\SDLOpenGLRenderer.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\Renderer\SDLRenderer.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\Renderer\SDLSimpleRenderer.cpp" />
+    <ClCompile Include="..\..\..\Src\Pillar\SDLGenericLib.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\SilkRoad\Android\SensorAndroid.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\SilkRoad\Android\TouchAndroid.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\SilkRoad\SilkRoad.cpp" />
@@ -196,10 +199,13 @@
     <ClCompile Include="..\..\..\Src\Pillar\Task\TaskRender.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\Task\TaskResource.cpp" />
     <ClCompile Include="..\..\..\Src\Pillar\Task\TaskTouch.cpp" />
+    <ClCompile Include="..\..\..\Src\Pillar\Wonderlang.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Src\Pillar\BuildWonderlandUp.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Canvas\Canvas.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Canvas\CanvasMode.h" />
+    <ClInclude Include="..\..\..\Src\Pillar\Configuration.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Entity\CollisionEntity.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Entity\Entity.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Entity\ImageAtlasEntity.h" />
@@ -261,6 +267,7 @@
     <ClInclude Include="..\..\..\Src\Pillar\Renderer\SDLOpenGLRenderer.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Renderer\SDLRenderer.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Renderer\SDLSimpleRenderer.h" />
+    <ClInclude Include="..\..\..\Src\Pillar\SDLGenericLib.h" />
     <ClInclude Include="..\..\..\Src\Pillar\SilkRoad\Android\SensorAndroid.h" />
     <ClInclude Include="..\..\..\Src\Pillar\SilkRoad\Android\TouchAndroid.h" />
     <ClInclude Include="..\..\..\Src\Pillar\SilkRoad\IMerchant.h" />
@@ -281,6 +288,7 @@
     <ClInclude Include="..\..\..\Src\Pillar\Utilities\FactoryScript.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Utilities\RTTI.h" />
     <ClInclude Include="..\..\..\Src\Pillar\Utilities\Singleton.h" />
+    <ClInclude Include="..\..\..\Src\Pillar\Wonderlang.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

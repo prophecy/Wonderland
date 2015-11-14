@@ -41,11 +41,6 @@ void RunLoop::OnUpdate()
 	_sceneManager->GetCurrentScene()->taskManager->UpdateTasksCalculator();
 }
 
-void RunLoop::OnRender()
-{
-	_sceneManager->GetCurrentScene()->taskManager->UpdateTasksRender();
-}
-
 void RunLoop::OnUpdateResourceThread()
 {
 	_sceneManager->GetCurrentScene()->taskManager->UpdateTasksResource();

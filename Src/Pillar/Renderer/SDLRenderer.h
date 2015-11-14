@@ -32,7 +32,7 @@
 #include "../Foundation/IRenderer.h"
 #include "../Library/Library.h"
 
-class SDLRenderer : IRenderer
+class SDLRenderer : public IRenderer
 {
 public:
 	SDL_Window* sdlWindow;

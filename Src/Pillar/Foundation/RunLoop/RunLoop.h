@@ -41,7 +41,6 @@ class RunLoop : public IRunLoop
 public:
 	void Create();
 	virtual void OnUpdate();
-	virtual void OnRender();
 	virtual void OnUpdateResourceThread();
 public:
 	Application*	application;

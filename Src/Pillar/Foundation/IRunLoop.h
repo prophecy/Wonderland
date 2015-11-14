@@ -35,7 +35,6 @@ class IRunLoop : public IBase
 {
 public:
 	virtual void OnUpdate()					= 0;
-	virtual void OnRender()					= 0;
 	virtual void OnUpdateResourceThread()	= 0;
 };
 

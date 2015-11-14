@@ -37,12 +37,17 @@
 SDLRenderer*	_sdlRenderer;
 SDL_Window*		RendererSetting::s_window;
 SDL_Renderer*	RendererSetting::s_SDLRenderer;
+// Todo: Generalize this to IRenderer
+SDLRenderer*	_userDefinedRenderer = NULL;
 
 void RendererSetting::Destroy()
 {
-	_sdlRenderer->Destroy();
-	delete _sdlRenderer;
-	_sdlRenderer = NULL;
+	if (_sdlRenderer)
+	{
+		_sdlRenderer->Destroy();
+		delete _sdlRenderer;
+		_sdlRenderer = NULL;
+	}
 }
 
 IRenderer* RendererSetting::CreateRenderer(Configuration::Renderertype rendererType)
@@ -64,6 +69,9 @@ IRenderer* RendererSetting::CreateRenderer(Configuration::Renderertype rendererT
 
 IRenderer* RendererSetting::CreateRenderer(IRenderer* renderer)
 {
-	Portal::GetPtr()->GetLog()->DebugLog("No implementation");
-	return NULL;
+	_userDefinedRenderer = (SDLRenderer*)renderer;
+	_userDefinedRenderer->sdlWindow = s_window;
+	_userDefinedRenderer->sdlRenderer = s_SDLRenderer;
+
+	return _userDefinedRenderer;
 }
