@@ -123,6 +123,8 @@
     <None Include="Resource\sample.rml" />
     <None Include="Resource\Shader\sample.frag" />
     <None Include="Resource\Shader\sample.vert" />
+    <None Include="Resource\Shader\sampleColorBlend.frag" />
+    <None Include="Resource\Shader\sampleColorBlend.vert" />
     <None Include="Resource\Shader\texture.frag" />
     <None Include="Resource\Shader\texture.vert" />
     <None Include="Resource\Shared\LibRocket\simple.rml" />

@@ -58,7 +58,7 @@ string LoadTextFile(string path);
 bool InitGL(string vertexShaderPath, string fragmentShaderPath);
 
 // Wonderland framework
-void SilhouetteRenderer::Create()	
+void SilhouetteRenderer::Create()
 {
 	//Use OpenGL 3.1 core
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
@@ -75,7 +75,14 @@ void SilhouetteRenderer::Create()
 	if (err != GLEW_OK)
 		DebugLog("GLEW ERROR: " + ToString(glewGetErrorString(err)));
 
-	InitGL("Resource/Shader/sample.vert", "Resource/Shader/sample.frag");
+	// Very sample shader
+	//InitGL("Resource/Shader/sample.vert", "Resource/Shader/sample.frag");
+
+	// Color blend
+	InitGL("Resource/Shader/sampleColorBlend.vert", "Resource/Shader/sampleColorBlend.frag");
+
+	// Shader with texture (Sampler2D)
+	//InitGL("Resource/Shader/texture.vert", "Resource/Shader/texture.frag");
 }
 
 void SilhouetteRenderer::Render()	
@@ -234,6 +241,7 @@ bool InitGL(string vertexShaderPath, string fragmentShaderPath)
 	return success;
 }
 
+// ---------------------------------------------------------------------------
 //Shader loading utility programs
 void printProgramLog(GLuint program)
 {
