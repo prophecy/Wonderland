@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 	// Set canvas color
 	Configuration::GetPtr()->SetCanvasColor(3, 113, 156, 255);
 
-	// Set renderer
+	// Set user-defined renderer
 	Configuration::GetPtr()->SetRendererType(Configuration::Renderertype::RENDERER_TYPE_USER_DEFINED);
 	WonderPtr<SilhouetteRenderer> renderer;
 	renderer.Create();

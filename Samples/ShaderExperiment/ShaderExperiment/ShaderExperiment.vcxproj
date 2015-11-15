@@ -91,9 +91,8 @@
     <Image Include="Resource\Character\Archer.png" />
     <Image Include="Resource\Character\ogre.png" />
     <Image Include="Resource\Character\Spartan.png" />
-    <Image Include="Resource\Character\Spartans.png" />
-    <Image Include="Resource\DemoTile.png" />
-    <Image Include="Resource\DemoTileGreen.png" />
+    <Image Include="Resource\Image\DemoTile.png" />
+    <Image Include="Resource\Image\DemoTileGreen.png" />
     <Image Include="Resource\high_scores_alien_1.tga" />
     <Image Include="Resource\high_scores_alien_2.tga" />
     <Image Include="Resource\high_scores_alien_3.tga" />
@@ -114,7 +113,6 @@
     <Image Include="Resource\wave_02.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resource\Character\Spartans.json" />
     <None Include="Resource\cursor.rml" />
     <None Include="Resource\demo.rml" />
     <None Include="Resource\invader.rcss" />
@@ -123,6 +121,10 @@
     </None>
     <None Include="Resource\rkt.rcss" />
     <None Include="Resource\sample.rml" />
+    <None Include="Resource\Shader\sample.frag" />
+    <None Include="Resource\Shader\sample.vert" />
+    <None Include="Resource\Shader\texture.frag" />
+    <None Include="Resource\Shader\texture.vert" />
     <None Include="Resource\Shared\LibRocket\simple.rml" />
     <None Include="Resource\staticInvader.rcss" />
     <None Include="Resource\staticWindow.rml" />
