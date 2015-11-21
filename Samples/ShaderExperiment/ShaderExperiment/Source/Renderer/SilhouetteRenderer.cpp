@@ -57,6 +57,8 @@ void printShaderLog(GLuint shader);
 string LoadTextFile(string path);
 bool InitGL(string vertexShaderPath, string fragmentShaderPath);
 
+GLint myFragColorloc = -1;
+
 // Wonderland framework
 void SilhouetteRenderer::Create()
 {
@@ -80,6 +82,18 @@ void SilhouetteRenderer::Create()
 
 	// Color blend
 	InitGL("Resource/Shader/sampleColorBlend.vert", "Resource/Shader/sampleColorBlend.frag");
+
+	// This code works with uniform
+// 	myFragColorloc = glGetUniformLocation(gProgramID, "color");
+// 	if (myFragColorloc == -1)
+// 	{
+// 		DebugLog("LVertexPos2D is not a valid glsl program variable!");
+// 	}
+// 	else
+// 	{
+// 		float myFloats[4] = { 1.0f, 0.8f, 0.1f, 1.0f };
+// 		glProgramUniform4fv(gProgramID, myFragColorloc, 1, myFloats);
+// 	}
 
 	// Shader with texture (Sampler2D)
 	//InitGL("Resource/Shader/texture.vert", "Resource/Shader/texture.frag");
