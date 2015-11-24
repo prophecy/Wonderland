@@ -81,8 +81,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Source\Renderer\SilhouetteRenderer.h" />
-    <ClInclude Include="Source\Task\Move.hpp" />
-    <ClInclude Include="Source\Task\SpartanAnim.hpp" />
+    <ClInclude Include="Source\Task\HandleMouse.hpp" />
     <ClInclude Include="Source\AppInclude.h" />
     <ClInclude Include="Source\Scene\SceneWelcome.hpp" />
     <ClInclude Include="Source\WonderApp.h" />

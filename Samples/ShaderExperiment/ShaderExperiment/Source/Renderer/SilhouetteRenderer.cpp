@@ -50,6 +50,7 @@ GLuint gProgramID = 0;
 GLint gVertexPos2DLocation = -1;
 GLuint gVBO = 0;
 GLuint gIBO = 0;
+GLuint h_uVertexScale = -1;
 
 // GL helper function's prototypes
 void printProgramLog(GLuint program);
@@ -58,6 +59,14 @@ string LoadTextFile(string path);
 bool InitGL(string vertexShaderPath, string fragmentShaderPath);
 
 GLint myFragColorloc = -1;
+
+f32 g_obj_scale = 1.0;
+
+// Parameter setting functions (Used to interact with core system)
+void SilhouetteRenderer::SetParameter(f32 v0)
+{
+	g_obj_scale = v0;
+}
 
 // Wonderland framework
 void SilhouetteRenderer::Create()
@@ -95,6 +104,8 @@ void SilhouetteRenderer::Create()
 // 		glProgramUniform4fv(gProgramID, myFragColorloc, 1, myFloats);
 // 	}
 
+	h_uVertexScale = glGetUniformLocation(gProgramID, "uVertexScale");
+
 	// Shader with texture (Sampler2D)
 	//InitGL("Resource/Shader/texture.vert", "Resource/Shader/texture.frag");
 }
@@ -109,6 +120,9 @@ void SilhouetteRenderer::Render()
 
 	//Enable vertex position
 	glEnableVertexAttribArray(gVertexPos2DLocation);
+
+	// Manipulate vertex by mouse position
+	glUniform1f(h_uVertexScale, g_obj_scale);
 
 	//Set vertex data
 	glBindBuffer(GL_ARRAY_BUFFER, gVBO);

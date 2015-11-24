@@ -40,6 +40,8 @@ public:
 	virtual void Destroy();
 	virtual void Render();
 
+	static void SetParameter(f32 v0);
+
 private:
 	void BatchRender();
 };

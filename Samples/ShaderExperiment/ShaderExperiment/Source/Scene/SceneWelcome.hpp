@@ -2,18 +2,18 @@
 #define __SCENE_WELCOME_HPP_
 
 #include "../AppInclude.h"
-#include "../Task/Move.hpp"
-#include "../Task/SpartanAnim.hpp"
+#include "../Task/HandleMouse.hpp"
 
 class SceneWelcome : public IScene
 {
 	virtual void Create()
 	{
-		WonderPtr<ImageEntity> tileImage = CreateElement<ImageEntity>();
-		tileImage->LoadImage("Resource/Image/DemoTileGreen.png");
-		tileImage->pivot = point2f(0.0f, 72.0f);
-		tileImage->position = point2f(300.0f, 300.0f);
-		AddEntity(tileImage);
+// 		WonderPtr<ImageEntity> tileImage = CreateElement<ImageEntity>();
+// 		tileImage->LoadImage("Resource/Image/DemoTileGreen.png");
+// 		tileImage->pivot = point2f(0.0f, 72.0f);
+// 		tileImage->position = point2f(300.0f, 300.0f);
+// 		AddEntity(tileImage);
+		BindTask(CreateElement<HandleMouse>());
 	}
 
 	virtual void Destroy() { }
