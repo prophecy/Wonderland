@@ -50,7 +50,14 @@ GLuint gProgramID = 0;
 GLint gVertexPos2DLocation = -1;
 GLuint gVBO = 0;
 GLuint gIBO = 0;
-GLuint h_uVertexScale = -1;
+GLuint h_uColorScale = -1;
+
+GLuint h_texUnit0;
+GLuint h_aTexCoord;
+GLuint h_aColor;
+
+GLuint texVbo = -1;
+GLuint colVbo = -1;
 
 // GL helper function's prototypes
 void printProgramLog(GLuint program);
@@ -86,28 +93,70 @@ void SilhouetteRenderer::Create()
 	if (err != GLEW_OK)
 		DebugLog("GLEW ERROR: " + ToString(glewGetErrorString(err)));
 
-	// Very sample shader
-	//InitGL("Resource/Shader/sample.vert", "Resource/Shader/sample.frag");
+	InitGL("Resource/Shader/texture.vert", "Resource/Shader/texture.frag");
 
-	// Color blend
-	InitGL("Resource/Shader/sampleColorBlend.vert", "Resource/Shader/sampleColorBlend.frag");
+	h_uColorScale = glGetUniformLocation(gProgramID, "uColorScale");
 
-	// This code works with uniform
-// 	myFragColorloc = glGetUniformLocation(gProgramID, "color");
-// 	if (myFragColorloc == -1)
-// 	{
-// 		DebugLog("LVertexPos2D is not a valid glsl program variable!");
-// 	}
-// 	else
-// 	{
-// 		float myFloats[4] = { 1.0f, 0.8f, 0.1f, 1.0f };
-// 		glProgramUniform4fv(gProgramID, myFragColorloc, 1, myFloats);
-// 	}
+	// Texture (Sampler2D)
+	SDL_Surface *surface;
+	
+	if ((surface = IMG_Load("Resource/Image/SpartanShield.png")))
+	{
+		GLuint h_texture = -1;
 
-	h_uVertexScale = glGetUniformLocation(gProgramID, "uVertexScale");
+		glActiveTexture(GL_TEXTURE0);
+		glGenTextures(1, &h_texture);
+		glBindTexture(GL_TEXTURE_2D, h_texture);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	// Shader with texture (Sampler2D)
-	//InitGL("Resource/Shader/texture.vert", "Resource/Shader/texture.frag");
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,
+			surface->w, surface->h, 0, GL_RGBA, GL_UNSIGNED_BYTE,
+			surface->pixels);
+
+		h_texUnit0 = glGetUniformLocation(gProgramID, "texUnit0");
+		h_aTexCoord = glGetAttribLocation(gProgramID, "aTexCoord");
+		h_aColor = glGetAttribLocation(gProgramID, "aColor");
+
+		// Create texture VBO
+		GLfloat sqTex[8] =
+		{
+			0, 1,
+			1, 1,
+			1, 0,
+			0, 0,
+		};
+
+		glGenBuffers(1, &texVbo);
+		glBindBuffer(GL_ARRAY_BUFFER, texVbo);
+ 		glBufferData(
+ 			GL_ARRAY_BUFFER,
+ 			8 * sizeof(GLfloat),
+ 			sqTex,
+ 			GL_STATIC_DRAW);
+
+		// Create color VBO
+		static GLfloat sqCol[12] = {
+			1, 0, 0,
+			0, 1, 1,
+			0, 0, 1,
+			1, 0, 0,
+		};
+
+		glGenBuffers(1, &colVbo);
+		glBindBuffer(GL_ARRAY_BUFFER, colVbo);
+		glBufferData(
+			GL_ARRAY_BUFFER,
+			12 * sizeof(GLfloat),
+			sqCol,
+ 			GL_STATIC_DRAW);
+	}
+	else
+	{
+		DebugLog("Texture file not found!");
+	}
 }
 
 void SilhouetteRenderer::Render()	
@@ -118,11 +167,13 @@ void SilhouetteRenderer::Render()
 	//Bind program
 	glUseProgram(gProgramID);
 
-	//Enable vertex position
+	//Enable
 	glEnableVertexAttribArray(gVertexPos2DLocation);
+	glEnableVertexAttribArray(h_aTexCoord);
+	glEnableVertexAttribArray(h_aColor);
 
-	// Manipulate vertex by mouse position
-	glUniform1f(h_uVertexScale, g_obj_scale);
+	// Manipulate vertex by mouse button
+	glUniform1f(h_uColorScale, g_obj_scale);
 
 	//Set vertex data
 	glBindBuffer(GL_ARRAY_BUFFER, gVBO);
@@ -130,9 +181,22 @@ void SilhouetteRenderer::Render()
 
 	//Set index data and render
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, gIBO);
+
+	// Texture
+	glBindBuffer(GL_ARRAY_BUFFER, texVbo);
+	glVertexAttribPointer(h_aTexCoord,
+		2, GL_FLOAT, GL_FALSE, 0, 0);
+
+	// Color
+	glBindBuffer(GL_ARRAY_BUFFER, colVbo);
+	glVertexAttribPointer(h_aColor,
+	 	3, GL_FLOAT, GL_FALSE, 0, 0);
+
 	glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_INT, NULL);
 
-	//Disable vertex position
+	//Disable
+	glDisableVertexAttribArray(h_aColor);
+	glDisableVertexAttribArray(h_aTexCoord);
 	glDisableVertexAttribArray(gVertexPos2DLocation);
 
 	//Unbind program
@@ -212,8 +276,7 @@ bool InitGL(string vertexShaderPath, string fragmentShaderPath)
 		{
 			//Attach fragment shader to program
 			glAttachShader(gProgramID, fragmentShader);
-
-
+			
 			//Link program
 			glLinkProgram(gProgramID);
 
@@ -229,10 +292,10 @@ bool InitGL(string vertexShaderPath, string fragmentShaderPath)
 			else
 			{
 				//Get vertex attribute location
-				gVertexPos2DLocation = glGetAttribLocation(gProgramID, "LVertexPos2D");
+				gVertexPos2DLocation = glGetAttribLocation(gProgramID, "aVertex");
 				if (gVertexPos2DLocation == -1)
 				{
-					DebugLog("LVertexPos2D is not a valid glsl program variable!");
+					DebugLog("aVertex is not a valid glsl program variable!");
 					success = false;
 				}
 				else

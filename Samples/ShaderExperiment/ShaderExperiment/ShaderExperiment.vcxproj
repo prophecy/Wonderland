@@ -96,6 +96,7 @@
     <Image Include="Resource\high_scores_alien_2.tga" />
     <Image Include="Resource\high_scores_alien_3.tga" />
     <Image Include="Resource\high_scores_defender.tga" />
+    <Image Include="Resource\Image\spartanShield.png" />
     <Image Include="Resource\invader.tga" />
     <Image Include="Resource\present.tga" />
     <Image Include="Resource\cloud_01.png" />
