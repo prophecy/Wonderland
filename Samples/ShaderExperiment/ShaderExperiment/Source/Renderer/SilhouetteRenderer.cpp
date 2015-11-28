@@ -166,11 +166,15 @@ void SilhouetteRenderer::Render()
 
 	//Bind program
 	glUseProgram(gProgramID);
-
+	
 	//Enable
 	glEnableVertexAttribArray(gVertexPos2DLocation);
 	glEnableVertexAttribArray(h_aTexCoord);
 	glEnableVertexAttribArray(h_aColor);
+	glEnable(GL_BLEND);
+
+	// Blend
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
 	// Manipulate vertex by mouse button
 	glUniform1f(h_uColorScale, g_obj_scale);
@@ -195,6 +199,7 @@ void SilhouetteRenderer::Render()
 	glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_INT, NULL);
 
 	//Disable
+	glDisable(GL_BLEND);
 	glDisableVertexAttribArray(h_aColor);
 	glDisableVertexAttribArray(h_aTexCoord);
 	glDisableVertexAttribArray(gVertexPos2DLocation);
