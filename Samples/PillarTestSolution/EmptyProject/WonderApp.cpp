@@ -1,6 +1,5 @@
 #include "WonderApp.h"
-
-#include "Scene/SceneWelcome.hpp"
+#include "WonderScene.hpp"
 
 void WonderApp::Create()
 {
@@ -12,25 +11,25 @@ void WonderApp::Create()
 
 void WonderApp::Destroy()
 {
-	DebugLog("WonderApp TearDown()");
+	//DebugLog("WonderApp TearDown()");
 }
 
 void WonderApp::Start()
 {
-	DebugLog("WonderApp Start()");
+	//DebugLog("WonderApp Start()");
 }
 
 void WonderApp::Stop()
 {
-	DebugLog("WonderApp Stop()");
+	//DebugLog("WonderApp Stop()");
 }
 
 void WonderApp::Resume()
 {
-	DebugLog("WonderApp Resume()");
+	//DebugLog("WonderApp Resume()");
 }
 
 void WonderApp::Pause()
 {
-	DebugLog("WonderApp Pause()");
+	//DebugLog("WonderApp Pause()");
 }

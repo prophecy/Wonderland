@@ -31,7 +31,7 @@
 #ifndef __PILLAR_PLUGIN_H__
 #define __PILLAR_PLUGIN_H__
 
-#include "Library/Memory/WonderPtr.h"
+#include "Utility/Memory/WonderPtr.h"
 
 #include "IPlugin.h"
 #include "IApplication.h"

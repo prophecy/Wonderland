@@ -29,7 +29,7 @@
 #ifndef __FACTORY_H__
 #define __I_BLUEPRINT_H__
 
-#include "../Library/Library.h"
+#include "Utility/Utility.h"
 #include "FactoryScript.h"
 #include "RTTI.h"
 

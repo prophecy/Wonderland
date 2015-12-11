@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharacterController", "ShaderExperiment\ShaderExperiment.vcxproj", "{FD95B4FB-381C-4399-AEAA-17737648997F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EmptyProject", "EmptyProject\EmptyProject.vcxproj", "{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PillarVS2015", "..\..\Build\VisualC\PillarVS2015\PillarVS2015.vcxproj", "{2DC7813E-F0F8-458C-9C61-E083365DCEEE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PillarVS2015", "..\..\Build\VisualC\Pillar\PillarVS2015.vcxproj", "{2DC7813E-F0F8-458C-9C61-E083365DCEEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,12 +15,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FD95B4FB-381C-4399-AEAA-17737648997F}.Debug|x64.ActiveCfg = Debug|Win32
-		{FD95B4FB-381C-4399-AEAA-17737648997F}.Debug|x86.ActiveCfg = Debug|Win32
-		{FD95B4FB-381C-4399-AEAA-17737648997F}.Debug|x86.Build.0 = Debug|Win32
-		{FD95B4FB-381C-4399-AEAA-17737648997F}.Release|x64.ActiveCfg = Release|Win32
-		{FD95B4FB-381C-4399-AEAA-17737648997F}.Release|x86.ActiveCfg = Release|Win32
-		{FD95B4FB-381C-4399-AEAA-17737648997F}.Release|x86.Build.0 = Release|Win32
+		{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}.Debug|x64.ActiveCfg = Debug|x64
+		{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}.Debug|x64.Build.0 = Debug|x64
+		{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}.Debug|x86.ActiveCfg = Debug|Win32
+		{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}.Debug|x86.Build.0 = Debug|Win32
+		{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}.Release|x64.ActiveCfg = Release|x64
+		{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}.Release|x64.Build.0 = Release|x64
+		{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}.Release|x86.ActiveCfg = Release|Win32
+		{7412AA95-B522-4B9D-9D3B-0F57BA0BFEE8}.Release|x86.Build.0 = Release|Win32
 		{2DC7813E-F0F8-458C-9C61-E083365DCEEE}.Debug|x64.ActiveCfg = Debug|x64
 		{2DC7813E-F0F8-458C-9C61-E083365DCEEE}.Debug|x64.Build.0 = Debug|x64
 		{2DC7813E-F0F8-458C-9C61-E083365DCEEE}.Debug|x86.ActiveCfg = Debug|Win32

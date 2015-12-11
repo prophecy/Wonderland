@@ -1,7 +1,7 @@
 #ifndef __WONDER_APP_H__
 #define __WONDER_APP_H__
 
-#include "AppInclude.h"
+#include "IApplication.h"
 
 class WonderApp : public IApplication
 {
