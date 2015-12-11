@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Florist.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IApplication.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IBase.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IElement.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IEntity.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IEntityManager.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IEvent.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IEventManager.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IInput.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IPlugin.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IRenderer.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\IScene.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\ISceneManager.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\ITask.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\ITaskManager.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Factory.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\FactoryScript.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Library.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Log\Log.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\GenericPool.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\Memory.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\MemoryHandle.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\PoolFacade.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\PoolLib.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\WonderPtr.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\RTTI.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Singleton.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Time\Timer.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Types.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\EventManager.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\InputManager.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\PillarPlugin.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\SceneManager.h" />
+    <ClInclude Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\TaskManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Log\Log.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\GenericPool.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\Memory.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Memory\PoolFacade.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Foundation\Library\Time\Timer.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\EventManager.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\InputManager.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\PillarPlugin.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\SceneManager.cpp" />
+    <ClCompile Include="..\..\..\..\NewPillar\Src\VisualC\Pillar\Plugins\Pillar\TaskManager.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2DC7813E-F0F8-458C-9C61-E083365DCEEE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>PillarVS2015</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)_d</TargetName>
+    <OutDir>..\..\..\Lib\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\Dependencies\Include;..\..\..\Dependencies\Include\SDL;..\..\..\Src\Foundation;..\..\..\Src\Plugin\Pillar;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>..\..\..\Dependencies\SDL\VisualC\SDL\Win32\Debug;..\..\..\Dependencies\SDLmain\Win32\Debug;..\..\..\Dependencies\SDL2_image\VisualC\Debug;..\..\..\Dependencies\glew-lib\lib\Debug;..\..\..\Dependencies\libRocket-master-lib\Debug;..\..\..\Dependencies\jsoncpp-master\dist\lib_debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>..\..\..\Lib\PillarVS2015_d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\Dependencies\Include;..\..\..\Dependencies\Include\SDL;..\..\..\Src\Foundation;..\..\..\Src\Plugin\Pillar;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\Dependencies\Include;..\..\..\Dependencies\Include\SDL;..\..\..\Src\Foundation;..\..\..\Src\Plugin\Pillar;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>..\..\..\Dependencies\SDL\VisualC\SDL\Win32\Release;..\..\..\Dependencies\SDLmain\Win32\Release;..\..\..\Dependencies\SDL2_image\VisualC\Release;..\..\..\Dependencies\glew-lib\lib\Release;..\..\..\Dependencies\libRocket-master-lib\Release;..\..\..\Dependencies\jsoncpp-master\dist\lib_release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>..\..\..\Lib\PillarVS2015.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\Dependencies\Include;..\..\..\Dependencies\Include\SDL;..\..\..\Src\Foundation;..\..\..\Src\Plugin\Pillar;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
