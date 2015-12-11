@@ -1,2 +1,2 @@
 # Pillar
-Cross-platform C++ framework for game
+Cross-platform C++ framework for any software
