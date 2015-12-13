@@ -156,3 +156,6 @@ $RECYCLE.BIN/
 # Ignore resources
 Samples/**/**/Resource/Character/Spartans.png
 Samples/**/**/Resource/Character/Spartans.json
+
+# Xcode projects
+*.xcuserstate
