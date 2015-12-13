@@ -48,8 +48,6 @@ public:
 	template <typename T>
 	MemoryHandle<T>* Alloc()
 	{
-		size_t size	= sizeof(T);
-		
 		// Naive alloc mode1
 		MemoryHandle<T>* handle	= new MemoryHandle<T>(); // <<< keep this in organized place
 		T* ptr			= new T();
@@ -107,13 +105,13 @@ public:
 		_addressHandleMap.clear();
 	}
 
-	u32 GetMemoryCounter()
+	u64 GetMemoryCounter()
 	{
 		return _codeHandleMap.size();
 	}
 
 	template <typename T>
-	MemoryHandle<T>* GetHandle(u32 address)
+	MemoryHandle<T>* GetHandle(u64 address)
 	{
 		return (MemoryHandle<T>*)&_addressHandleMap[(u32*)address];
 	}

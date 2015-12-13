@@ -29,7 +29,7 @@
 #ifndef __EVENT_NOTIFICATION_H__
 #define __EVENT_NOTIFICATION_H__
 
-#include "Library.h"
+#include "Utility.h"
 #include "IEvent.h"
 
 class ITask;

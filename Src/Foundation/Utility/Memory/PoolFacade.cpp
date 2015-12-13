@@ -60,7 +60,7 @@ PoolFacade::~PoolFacade()
 	delete(_pimpl);
 }
 //--------------------------------------------
-PoolFacade::Pool* const PoolFacade::CreatePool(size_t sliceSize, int sliceCount)
+PoolFacade::Pool* const PoolFacade::CreatePool(size_t sliceSize, long sliceCount)
 {
 	Pool* newPool	= NULL;
 	

@@ -43,7 +43,8 @@ void PillarPlugin::Create(WonderPtr<IApplication>	application)
 	this->application = application;
 
 	// Scene manager
-	application->sceneManager = CreateElement<SceneManager>();;
+    WonderPtr<SceneManager> sm = CreateElement<SceneManager>();
+	application->sceneManager = sm;
 
 	// Create application
 	application->Create();

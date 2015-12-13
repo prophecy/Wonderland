@@ -44,7 +44,7 @@ public:
 
 	void BindTask(WonderPtr<ITask> task)
 	{
-		WonderPtr<IEntity> ent = Memory::GetPtr()->GetHandle<IEntity>((u32)this);
+		WonderPtr<IEntity> ent = Memory::GetPtr()->GetHandle<IEntity>((addr)this);
 		task->entities.push_back(ent);
 		tasks.push_back(task);
 	}

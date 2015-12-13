@@ -40,7 +40,7 @@ public:
 	PoolFacade();
 	~PoolFacade();
 
-	Pool* const CreatePool(size_t sliceSize, int sliceCount);
+	Pool* const CreatePool(size_t sliceSize, long sliceCount);
 	bool DeletePool(Pool* poolPtr);
 	std::vector<Pool*> GetPoolList();
 	void DeleteAllPool();

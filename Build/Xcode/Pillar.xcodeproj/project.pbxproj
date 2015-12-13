@@ -15,6 +15,16 @@
 		9E45F9921C1CA9C800EAE229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E45F9901C1CA9C800EAE229 /* LaunchScreen.storyboard */; };
 		9E45F99D1C1CA9C800EAE229 /* PillarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F99C1C1CA9C800EAE229 /* PillarTests.m */; };
 		9E45F9A81C1CA9C800EAE229 /* PillarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9A71C1CA9C800EAE229 /* PillarUITests.m */; };
+		9E45F9EA1C1CAAA000EAE229 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9CB1C1CAAA000EAE229 /* Log.cpp */; };
+		9E45F9EB1C1CAAA000EAE229 /* GenericPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9CE1C1CAAA000EAE229 /* GenericPool.cpp */; };
+		9E45F9EC1C1CAAA000EAE229 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9D01C1CAAA000EAE229 /* Memory.cpp */; };
+		9E45F9ED1C1CAAA000EAE229 /* PoolFacade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9D31C1CAAA000EAE229 /* PoolFacade.cpp */; };
+		9E45F9EE1C1CAAA000EAE229 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9DA1C1CAAA000EAE229 /* Timer.cpp */; };
+		9E45F9EF1C1CAAA000EAE229 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E01C1CAAA000EAE229 /* EventManager.cpp */; };
+		9E45F9F01C1CAAA000EAE229 /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E21C1CAAA000EAE229 /* InputManager.cpp */; };
+		9E45F9F11C1CAAA000EAE229 /* PillarPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E41C1CAAA000EAE229 /* PillarPlugin.cpp */; };
+		9E45F9F21C1CAAA000EAE229 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E61C1CAAA000EAE229 /* SceneManager.cpp */; };
+		9E45F9F31C1CAAA000EAE229 /* TaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E81C1CAAA000EAE229 /* TaskManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,50 @@
 		9E45F9A31C1CA9C800EAE229 /* PillarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PillarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E45F9A71C1CA9C800EAE229 /* PillarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PillarUITests.m; sourceTree = "<group>"; };
 		9E45F9A91C1CA9C800EAE229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E45F9B81C1CAAA000EAE229 /* Florist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Florist.h; sourceTree = "<group>"; };
+		9E45F9B91C1CAAA000EAE229 /* IApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IApplication.h; sourceTree = "<group>"; };
+		9E45F9BA1C1CAAA000EAE229 /* IBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBase.h; sourceTree = "<group>"; };
+		9E45F9BB1C1CAAA000EAE229 /* IElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IElement.h; sourceTree = "<group>"; };
+		9E45F9BC1C1CAAA000EAE229 /* IEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEntity.h; sourceTree = "<group>"; };
+		9E45F9BD1C1CAAA000EAE229 /* IEntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEntityManager.h; sourceTree = "<group>"; };
+		9E45F9BE1C1CAAA000EAE229 /* IEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEvent.h; sourceTree = "<group>"; };
+		9E45F9BF1C1CAAA000EAE229 /* IEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEventManager.h; sourceTree = "<group>"; };
+		9E45F9C01C1CAAA000EAE229 /* IInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IInput.h; sourceTree = "<group>"; };
+		9E45F9C11C1CAAA000EAE229 /* IPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPlugin.h; sourceTree = "<group>"; };
+		9E45F9C21C1CAAA000EAE229 /* IRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRenderer.h; sourceTree = "<group>"; };
+		9E45F9C31C1CAAA000EAE229 /* IScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScene.h; sourceTree = "<group>"; };
+		9E45F9C41C1CAAA000EAE229 /* ISceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISceneManager.h; sourceTree = "<group>"; };
+		9E45F9C51C1CAAA000EAE229 /* ITask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITask.h; sourceTree = "<group>"; };
+		9E45F9C61C1CAAA000EAE229 /* ITaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITaskManager.h; sourceTree = "<group>"; };
+		9E45F9C81C1CAAA000EAE229 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		9E45F9C91C1CAAA000EAE229 /* FactoryScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactoryScript.h; sourceTree = "<group>"; };
+		9E45F9CB1C1CAAA000EAE229 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
+		9E45F9CC1C1CAAA000EAE229 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		9E45F9CE1C1CAAA000EAE229 /* GenericPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericPool.cpp; sourceTree = "<group>"; };
+		9E45F9CF1C1CAAA000EAE229 /* GenericPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericPool.h; sourceTree = "<group>"; };
+		9E45F9D01C1CAAA000EAE229 /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
+		9E45F9D11C1CAAA000EAE229 /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory.h; sourceTree = "<group>"; };
+		9E45F9D21C1CAAA000EAE229 /* MemoryHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryHandle.h; sourceTree = "<group>"; };
+		9E45F9D31C1CAAA000EAE229 /* PoolFacade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolFacade.cpp; sourceTree = "<group>"; };
+		9E45F9D41C1CAAA000EAE229 /* PoolFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolFacade.h; sourceTree = "<group>"; };
+		9E45F9D51C1CAAA000EAE229 /* PoolLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolLib.h; sourceTree = "<group>"; };
+		9E45F9D61C1CAAA000EAE229 /* WonderPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WonderPtr.h; sourceTree = "<group>"; };
+		9E45F9D71C1CAAA000EAE229 /* RTTI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTTI.h; sourceTree = "<group>"; };
+		9E45F9D81C1CAAA000EAE229 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		9E45F9DA1C1CAAA000EAE229 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		9E45F9DB1C1CAAA000EAE229 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		9E45F9DC1C1CAAA000EAE229 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		9E45F9DD1C1CAAA000EAE229 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		9E45F9E01C1CAAA000EAE229 /* EventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventManager.cpp; sourceTree = "<group>"; };
+		9E45F9E11C1CAAA000EAE229 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		9E45F9E21C1CAAA000EAE229 /* InputManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputManager.cpp; sourceTree = "<group>"; };
+		9E45F9E31C1CAAA000EAE229 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
+		9E45F9E41C1CAAA000EAE229 /* PillarPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PillarPlugin.cpp; sourceTree = "<group>"; };
+		9E45F9E51C1CAAA000EAE229 /* PillarPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PillarPlugin.h; sourceTree = "<group>"; };
+		9E45F9E61C1CAAA000EAE229 /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
+		9E45F9E71C1CAAA000EAE229 /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
+		9E45F9E81C1CAAA000EAE229 /* TaskManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaskManager.cpp; sourceTree = "<group>"; };
+		9E45F9E91C1CAAA000EAE229 /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +135,7 @@
 		9E45F9761C1CA9C600EAE229 = {
 			isa = PBXGroup;
 			children = (
+				9E45F9B61C1CAAA000EAE229 /* Src */,
 				9E45F9811C1CA9C600EAE229 /* Pillar */,
 				9E45F99B1C1CA9C800EAE229 /* PillarTests */,
 				9E45F9A61C1CA9C800EAE229 /* PillarUITests */,
@@ -138,6 +193,114 @@
 				9E45F9A91C1CA9C800EAE229 /* Info.plist */,
 			);
 			path = PillarUITests;
+			sourceTree = "<group>";
+		};
+		9E45F9B61C1CAAA000EAE229 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				9E45F9B71C1CAAA000EAE229 /* Foundation */,
+				9E45F9DE1C1CAAA000EAE229 /* Plugin */,
+			);
+			name = Src;
+			path = ../../Src;
+			sourceTree = "<group>";
+		};
+		9E45F9B71C1CAAA000EAE229 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				9E45F9B81C1CAAA000EAE229 /* Florist.h */,
+				9E45F9B91C1CAAA000EAE229 /* IApplication.h */,
+				9E45F9BA1C1CAAA000EAE229 /* IBase.h */,
+				9E45F9BB1C1CAAA000EAE229 /* IElement.h */,
+				9E45F9BC1C1CAAA000EAE229 /* IEntity.h */,
+				9E45F9BD1C1CAAA000EAE229 /* IEntityManager.h */,
+				9E45F9BE1C1CAAA000EAE229 /* IEvent.h */,
+				9E45F9BF1C1CAAA000EAE229 /* IEventManager.h */,
+				9E45F9C01C1CAAA000EAE229 /* IInput.h */,
+				9E45F9C11C1CAAA000EAE229 /* IPlugin.h */,
+				9E45F9C21C1CAAA000EAE229 /* IRenderer.h */,
+				9E45F9C31C1CAAA000EAE229 /* IScene.h */,
+				9E45F9C41C1CAAA000EAE229 /* ISceneManager.h */,
+				9E45F9C51C1CAAA000EAE229 /* ITask.h */,
+				9E45F9C61C1CAAA000EAE229 /* ITaskManager.h */,
+				9E45F9C71C1CAAA000EAE229 /* Utility */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		9E45F9C71C1CAAA000EAE229 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9E45F9C81C1CAAA000EAE229 /* Factory.h */,
+				9E45F9C91C1CAAA000EAE229 /* FactoryScript.h */,
+				9E45F9CA1C1CAAA000EAE229 /* Log */,
+				9E45F9CD1C1CAAA000EAE229 /* Memory */,
+				9E45F9D71C1CAAA000EAE229 /* RTTI.h */,
+				9E45F9D81C1CAAA000EAE229 /* Singleton.h */,
+				9E45F9D91C1CAAA000EAE229 /* Time */,
+				9E45F9DC1C1CAAA000EAE229 /* Types.h */,
+				9E45F9DD1C1CAAA000EAE229 /* Utility.h */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9E45F9CA1C1CAAA000EAE229 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				9E45F9CB1C1CAAA000EAE229 /* Log.cpp */,
+				9E45F9CC1C1CAAA000EAE229 /* Log.h */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		9E45F9CD1C1CAAA000EAE229 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				9E45F9CE1C1CAAA000EAE229 /* GenericPool.cpp */,
+				9E45F9CF1C1CAAA000EAE229 /* GenericPool.h */,
+				9E45F9D01C1CAAA000EAE229 /* Memory.cpp */,
+				9E45F9D11C1CAAA000EAE229 /* Memory.h */,
+				9E45F9D21C1CAAA000EAE229 /* MemoryHandle.h */,
+				9E45F9D31C1CAAA000EAE229 /* PoolFacade.cpp */,
+				9E45F9D41C1CAAA000EAE229 /* PoolFacade.h */,
+				9E45F9D51C1CAAA000EAE229 /* PoolLib.h */,
+				9E45F9D61C1CAAA000EAE229 /* WonderPtr.h */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		9E45F9D91C1CAAA000EAE229 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				9E45F9DA1C1CAAA000EAE229 /* Timer.cpp */,
+				9E45F9DB1C1CAAA000EAE229 /* Timer.h */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		9E45F9DE1C1CAAA000EAE229 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				9E45F9DF1C1CAAA000EAE229 /* Pillar */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		9E45F9DF1C1CAAA000EAE229 /* Pillar */ = {
+			isa = PBXGroup;
+			children = (
+				9E45F9E01C1CAAA000EAE229 /* EventManager.cpp */,
+				9E45F9E11C1CAAA000EAE229 /* EventManager.h */,
+				9E45F9E21C1CAAA000EAE229 /* InputManager.cpp */,
+				9E45F9E31C1CAAA000EAE229 /* InputManager.h */,
+				9E45F9E41C1CAAA000EAE229 /* PillarPlugin.cpp */,
+				9E45F9E51C1CAAA000EAE229 /* PillarPlugin.h */,
+				9E45F9E61C1CAAA000EAE229 /* SceneManager.cpp */,
+				9E45F9E71C1CAAA000EAE229 /* SceneManager.h */,
+				9E45F9E81C1CAAA000EAE229 /* TaskManager.cpp */,
+				9E45F9E91C1CAAA000EAE229 /* TaskManager.h */,
+			);
+			path = Pillar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +433,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E45F9EF1C1CAAA000EAE229 /* EventManager.cpp in Sources */,
+				9E45F9EC1C1CAAA000EAE229 /* Memory.cpp in Sources */,
+				9E45F9F21C1CAAA000EAE229 /* SceneManager.cpp in Sources */,
 				9E45F98A1C1CA9C600EAE229 /* ViewController.m in Sources */,
+				9E45F9ED1C1CAAA000EAE229 /* PoolFacade.cpp in Sources */,
+				9E45F9F11C1CAAA000EAE229 /* PillarPlugin.cpp in Sources */,
+				9E45F9F01C1CAAA000EAE229 /* InputManager.cpp in Sources */,
+				9E45F9EE1C1CAAA000EAE229 /* Timer.cpp in Sources */,
 				9E45F9871C1CA9C600EAE229 /* AppDelegate.m in Sources */,
+				9E45F9F31C1CAAA000EAE229 /* TaskManager.cpp in Sources */,
+				9E45F9EB1C1CAAA000EAE229 /* GenericPool.cpp in Sources */,
+				9E45F9EA1C1CAAA000EAE229 /* Log.cpp in Sources */,
 				9E45F9841C1CA9C600EAE229 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,8 +586,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation/Utility,
+					../../Src/Foundation,
+					../../Dependencies/Include,
+					../../Dependencies/Include/SDL,
+				);
 				INFOPLIST_FILE = Pillar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pillar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -424,8 +605,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation/Utility,
+					../../Src/Foundation,
+					../../Dependencies/Include,
+					../../Dependencies/Include/SDL,
+				);
 				INFOPLIST_FILE = Pillar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pillar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -498,6 +687,7 @@
 				9E45F9AE1C1CA9C800EAE229 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E45F9AF1C1CA9C800EAE229 /* Build configuration list for PBXNativeTarget "PillarTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +696,7 @@
 				9E45F9B11C1CA9C800EAE229 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E45F9B21C1CA9C800EAE229 /* Build configuration list for PBXNativeTarget "PillarUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +705,7 @@
 				9E45F9B41C1CA9C800EAE229 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

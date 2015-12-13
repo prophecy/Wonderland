@@ -43,9 +43,9 @@ public:
 	WonderPtr<T>()
 	{
 		// Set handle to NULL
-		s32 data;
+		addr data;
 		data = 0x0;
-		memcpy((u8*)this, (u8*)&data, sizeof WonderPtr);
+		memcpy((u8*)this, (u8*)&data, sizeof(WonderPtr));
 	}
 
 	WonderPtr<T>(MemoryHandle<T>* handle)
@@ -56,7 +56,7 @@ public:
 	template <typename From>
 	WonderPtr<T>(From& from)
 	{
-		memcpy((u8*)this, (u8*)&from, sizeof WonderPtr);
+		memcpy((u8*)this, (u8*)&from, sizeof( WonderPtr));
 	}
 
 	void Alloc()
@@ -99,7 +99,7 @@ public:
 	template <typename From>
 	WonderPtr<T> operator= (From& from)
 	{
-		memcpy((u8*)this, (u8*)&from, sizeof WonderPtr);
+		memcpy((u8*)this, (u8*)&from, sizeof(WonderPtr));
 		return *((WonderPtr<T>*)&from);
 	}
 
@@ -108,7 +108,7 @@ public:
 	{
 		WonderPtr<T> ptr;
 		ptr = from;
-		return (s32)this->handle == (s32)ptr.handle;
+        return (addr)this->handle == (addr)ptr.handle;
 	}
 
 	template <typename From>
@@ -116,7 +116,7 @@ public:
 	{ 
 		WonderPtr<T> ptr;
 		ptr = from;
-		return (s32)this->handle != (s32)ptr.handle;
+		return (addr)this->handle != (addr)ptr.handle;
 	}
 
 };

@@ -61,7 +61,7 @@ private:
 	void _DeleteAllData();
 
 	int _SearchFreeSlice(size_t size);
-	int _CalcNeededSlice(size_t size);
+	addr _CalcNeededSlice(size_t size);
 	int _SetFlagToVariableSlice(void* pObj);
 	void _ClearSliceData(int firstId, int sliceCount);
 

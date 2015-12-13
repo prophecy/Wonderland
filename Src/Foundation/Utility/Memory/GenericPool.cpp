@@ -48,7 +48,7 @@ void* GenericPool::s_nextSectionData	= 0;
 void* GenericPool::operator new(size_t size, int sliceSize, int sliceCount)
 {
 	// calculate the size which is must be allocate
-	int classSize		= size;
+	addr classSize		= size;
 	s_sliceArraySize	= sizeof(bool) * sliceCount;
 	s_poolSize			= sliceSize * sliceCount;
 
@@ -56,7 +56,7 @@ void* GenericPool::operator new(size_t size, int sliceSize, int sliceCount)
 		+ s_sliceArraySize + s_poolSize;
 
 #ifdef MEM_POOL_DEBUG
-	int wastMemsSize	= sizeof(int) * sliceCount;
+	int wastMemsSize	= sizeof(addr) * sliceCount;
 	totalSize += wastMemsSize;
 #endif // #ifdef MEM_POOL_DEBUG
 	
@@ -66,7 +66,7 @@ void* GenericPool::operator new(size_t size, int sliceSize, int sliceCount)
 	s_pPool			= malloc(totalSize);
 
 #ifdef MEM_POOL_DEBUG
-	s_nextSectionData	= (void*)( (int)s_pPool + totalSize );
+	s_nextSectionData	= (void*)( (addr)s_pPool + totalSize );
 #endif // #ifdef MEM_POOL_DEBUG
 
 	// return allocated pointer
@@ -91,16 +91,16 @@ GenericPool::GenericPool()
 
 	// set pointer offsets
 	_slices_ptr	= (bool*)(this+1);
-	int memPos	= (int)_slices_ptr;
+	addr memPos	= (addr)_slices_ptr;
 	memPos += slicesArraySize;
 	_isPointerSlice_ptr	= (bool*)(memPos);
-	memPos		= (int)_isPointerSlice_ptr;
+	memPos		= (addr)_isPointerSlice_ptr;
 	memPos += isPointerSliceArraySize;
 	_pool_ptr	= (void*)memPos;
 
 #ifdef MEM_POOL_DEBUG
 	// set pointer of debug offsets
-	memPos	= (int)_pool_ptr;
+	memPos	= (addr)_pool_ptr;
 	memPos += poolSize;
 	_wastMems_ptr	= (int*)memPos;
 
@@ -122,13 +122,13 @@ GenericPool::GenericPool()
 
 	// assign value to _nextSectionData (the address of memory after the last allocated ones)
 	// we need to copy value of pointer position so
-	int nextSectionDataInt	= (int)s_nextSectionData;
+	addr nextSectionDataInt	= (addr)s_nextSectionData;
 	_nextSectionData	= (void*)nextSectionDataInt;
 
-	int lastPointer		= (int)(&_wastMems_ptr[_sliceCount-1]);
-	int lastPosition	= lastPointer + (sizeof(int) - 1);
+	addr lastPointer	= (addr)(&_wastMems_ptr[_sliceCount-1]);
+	addr lastPosition	= lastPointer + (sizeof(addr) - 1);
 
-	if (lastPosition >= (int)_nextSectionData)
+	if (lastPosition >= (addr)_nextSectionData)
 	{
 		cout << "Code Bugs!! memory outbound" << endl;
 	}
@@ -170,8 +170,8 @@ void* GenericPool::Request(size_t size)
 	}
 
 	// calculate pointer position
-	int offsetMemPos	= (int)_pool_ptr;
-	int ptrMemPos		= offsetMemPos + (sliceId * _sliceSize);
+	addr offsetMemPos	= (addr)_pool_ptr;
+	addr ptrMemPos		= offsetMemPos + (sliceId * _sliceSize);
 
 	// set memory position to the pointer
 	ptr	= (void*)ptrMemPos;
@@ -199,8 +199,8 @@ void* GenericPool::Request(size_t size)
 //--------------------------------------------
 void* GenericPool::Return(void* ptr)
 {
-	int ptrMemPos		= (int)ptr;
-	int offsetMemPos	= (int)_pool_ptr;
+	addr ptrMemPos		= (addr)ptr;
+	addr offsetMemPos	= (addr)_pool_ptr;
 
 	bool hasFound			= false;
 	int allocatedSliceId	= INCOMPLETE;
@@ -269,7 +269,7 @@ int GenericPool::GetTotalSize()
 		+ isPointerSliceArraySize + poolSize;
 
 #ifdef MEM_POOL_DEBUG
-	totalSize += sizeof(int) * _sliceCount; // _wastMems_ptr offset
+	totalSize += sizeof(addr) * _sliceCount; // _wastMems_ptr offset
 #endif // #ifdef MEM_POOL_DEBUG
 
 	return totalSize;
@@ -382,9 +382,9 @@ int GenericPool::_SearchFreeSlice(size_t size)
 	return sliceId;
 }
 //--------------------------------------------
-int GenericPool::_CalcNeededSlice(size_t size)
+addr GenericPool::_CalcNeededSlice(size_t size)
 {
-	int sliceCount	= size / _sliceSize;
+	addr sliceCount	= size / _sliceSize;
 	if ((size%_sliceSize) > 0)
 		sliceCount++;
 	return sliceCount;
@@ -393,21 +393,21 @@ int GenericPool::_CalcNeededSlice(size_t size)
 void GenericPool::_ClearSliceData(int firstId, int sliceCount)
 {
 	// calculate pointer position
-	int offsetMemPos	= (int)_pool_ptr;
-	int ptrFirstMemPos	= offsetMemPos + (firstId*_sliceSize);
-	int ptrLastMemPos	= ptrFirstMemPos + (sliceCount*_sliceSize);
+	addr offsetMemPos	= (addr)_pool_ptr;
+	addr ptrFirstMemPos	= offsetMemPos + (firstId*_sliceSize);
+	addr ptrLastMemPos	= ptrFirstMemPos + (sliceCount*_sliceSize);
 
 	// set first memory position to the pointer
 	void* ptr	= (void*)ptrFirstMemPos;
 
 	// KAK data destroyer
-	int dataSize	= sizeof(int);
+	int dataSize	= sizeof(addr);
 
-	while ( (((int)ptr)+dataSize) < ptrLastMemPos)
+	while ( (((addr)ptr)+dataSize) < ptrLastMemPos)
 	{
-		int* value	= (int*)ptr;
+		addr* value	= (addr*)ptr;
 		*value	&= 0x0;
-		ptr	= (void*)(((int)ptr)+1);
+		ptr	= (void*)(((addr)ptr)+1);
 	}
 }
 //--------------------------------------------

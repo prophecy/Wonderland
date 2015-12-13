@@ -43,7 +43,7 @@
 // Both requiring OS version 5.0 or greater
 #   if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 50000 || __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
 #		undef WONDERLAND_ACTIVE_PLATFORM	
-#       define WONDERLAND_ACTIVE_PLATFORM	WONDERLAND_PLATFORM_IPHONE
+#       define WONDERLAND_ACTIVE_PLATFORM	WONDERLAND_PLATFORM_IOS
 #	endif
 #elif defined( __WIN32__ ) || defined( _WIN32 )
 #	undef WONDERLAND_ACTIVE_PLATFORM
@@ -68,6 +68,13 @@
 
 // Typedef
 #if WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_WINDOWS
+
+#if _WIN64
+    typedef unsigned __int64	addr;
+#else
+    typedef unsigned __int32	addr;
+#endif
+
 	typedef __int8              s8;
 	typedef __int16             s16;
 	typedef __int32             s32;
@@ -93,7 +100,14 @@
 
 	typedef size_t				size_t;
 
-#elif WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_IPHONE
+#elif WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_IOS
+
+#if __x86_64__ || __ppc64__
+    typedef	unsigned long		addr;
+#else
+    typedef	unsigned int		addr;
+#endif
+
 	typedef	unsigned char		s8;
 	typedef short int			s16;
 	typedef int					s32;

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DC7BD3F257DB92F75BAB8B6C8C6267C266FFBE89",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "79318F806DD82309DE70426156A5C2E790831DED" : 0,
+    "DC7BD3F257DB92F75BAB8B6C8C6267C266FFBE89" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A8ADA5B7-B22C-41EE-8B4B-7DC9DD7908BF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "79318F806DD82309DE70426156A5C2E790831DED" : "",
+    "DC7BD3F257DB92F75BAB8B6C8C6267C266FFBE89" : "Pillar\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pillar",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Build\/Xcode\/Pillar.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/prophecyx\/lifeform.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "79318F806DD82309DE70426156A5C2E790831DED"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/prophecy\/Pillar.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DC7BD3F257DB92F75BAB8B6C8C6267C266FFBE89"
+    }
+  ]
+}

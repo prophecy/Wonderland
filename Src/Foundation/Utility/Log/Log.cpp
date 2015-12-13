@@ -73,6 +73,12 @@ THE SOFTWARE.
 #	define LOGW(TAG, MSG) __android_log_print(ANDROID_LOG_WARN   , TAG, "%s", MSG)
 #	define LOGE(TAG, MSG) __android_log_print(ANDROID_LOG_ERROR  , TAG, "%s", MSG)
 #elif WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_IOS
+#   include <iostream>
+#	define LOGV(TAG, MSG)	{}
+#	define LOGD(TAG, MSG)	{ std::cout << message << std::endl; }
+#	define LOGI(TAG, MSG)	{}
+#	define LOGW(TAG, MSG)	{}
+#	define LOGE(TAG, MSG)	{}
 #endif // WONDERLAND_ACTIVE_PLATFORM == ...
 
 template <> Log* Singleton< Log >::instance = 0;
@@ -116,8 +122,9 @@ void Log::LogDebug( const std::string& message, LogMessageLevel lml, bool maskDe
 			(*i)->MessageLogged( message, lml, maskDebug, mLogName );
 
 		if (mDebugOut && !maskDebug)
-			LOGD(mLogName.c_str(), message.c_str());
-
+            LOGD(mLogName.c_str(), message.c_str());
+        
+#if WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_WINDOWS || WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_ANDROID
 		// Write time into log
 		if (!mSuppressFile)
 		{
@@ -125,7 +132,7 @@ void Log::LogDebug( const std::string& message, LogMessageLevel lml, bool maskDe
 			{
 				struct tm pTime;
 				time_t ctTime; time(&ctTime);
-				
+
 				time_t tStore;
 				errno_t err = localtime_s( &pTime, &tStore);
 				mfpLog << std::setw(2) << std::setfill('0') << pTime.tm_hour
@@ -138,6 +145,7 @@ void Log::LogDebug( const std::string& message, LogMessageLevel lml, bool maskDe
 			// Flush stcmdream to ensure it is written (incase of a crash, we need log to be up to date)
 			mfpLog.flush();
 		}
+#endif
 	}
 }
 	
