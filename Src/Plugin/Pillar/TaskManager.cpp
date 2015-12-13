@@ -55,6 +55,8 @@ void TaskManager::AddTask(WonderPtr<ITask> task)
 
 void TaskManager::StartTask(WonderPtr<ITask> task)
 {
+	WonderPtr<ITask> validTask = _SearchTask(task);
+
 	_runningTasks.push_back(task);
 	task->Start();
 }
@@ -62,6 +64,7 @@ void TaskManager::StartTask(WonderPtr<ITask> task)
 void TaskManager::StopTask(WonderPtr<ITask> task)
 {
 	task->Stop();
+	bool isSuccess = _RemoveRunningTask(task);
 }
 
 // todo: need better search algorithm

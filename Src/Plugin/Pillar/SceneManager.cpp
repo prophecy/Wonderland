@@ -68,6 +68,7 @@ u32 SceneManager::AddScene(WonderPtr<IScene> scene)
 
 void SceneManager::RemoveScene(WonderPtr<IScene> scene)
 {
+	bool isSceneExist = false;
 	//if (_sceneMapReverse.count(scene))
 	//	isSceneExist = true;
 
@@ -84,6 +85,10 @@ void SceneManager::RemoveScene(WonderPtr<IScene> scene)
 
 void SceneManager::RemoveScene(u32 code)
 {
+	bool isSceneExist = false;
+	if (_sceneMap.count(code))
+		isSceneExist = true;
+
 	// remove
 	std::map<u32, WonderPtr<IScene>>::iterator it;
 	it = _sceneMap.find(code);

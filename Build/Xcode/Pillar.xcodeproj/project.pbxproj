@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E02A9031C1DDA350091FC0B /* PillarLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9E02A9021C1DDA350091FC0B /* PillarLib.h */; };
+		9E02A9371C1DDABC0091FC0B /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9CB1C1CAAA000EAE229 /* Log.cpp */; };
+		9E02A9381C1DDABC0091FC0B /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9D01C1CAAA000EAE229 /* Memory.cpp */; };
+		9E02A9391C1DDABC0091FC0B /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9DA1C1CAAA000EAE229 /* Timer.cpp */; };
+		9E02A93A1C1DDABC0091FC0B /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E01C1CAAA000EAE229 /* EventManager.cpp */; };
+		9E02A93B1C1DDABC0091FC0B /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E21C1CAAA000EAE229 /* InputManager.cpp */; };
+		9E02A93C1C1DDABC0091FC0B /* PillarPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E41C1CAAA000EAE229 /* PillarPlugin.cpp */; };
+		9E02A93D1C1DDABC0091FC0B /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E61C1CAAA000EAE229 /* SceneManager.cpp */; };
+		9E02A93E1C1DDABD0091FC0B /* TaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E81C1CAAA000EAE229 /* TaskManager.cpp */; };
 		9E45F9841C1CA9C600EAE229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9831C1CA9C600EAE229 /* main.m */; };
 		9E45F9871C1CA9C600EAE229 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9861C1CA9C600EAE229 /* AppDelegate.m */; };
 		9E45F98A1C1CA9C600EAE229 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9891C1CA9C600EAE229 /* ViewController.m */; };
@@ -42,7 +51,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9E02A8FE1C1DDA340091FC0B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				9E02A9031C1DDA350091FC0B /* PillarLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9E02A9001C1DDA340091FC0B /* libPillarLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPillarLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E02A9021C1DDA350091FC0B /* PillarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PillarLib.h; sourceTree = "<group>"; };
+		9E02A9041C1DDA350091FC0B /* PillarLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PillarLib.m; sourceTree = "<group>"; };
 		9E45F97F1C1CA9C600EAE229 /* Pillar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pillar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E45F9831C1CA9C600EAE229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E45F9851C1CA9C600EAE229 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +126,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9E02A8FD1C1DDA340091FC0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E45F97C1C1CA9C600EAE229 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,6 +157,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E02A9011C1DDA350091FC0B /* PillarLib */ = {
+			isa = PBXGroup;
+			children = (
+				9E02A9021C1DDA350091FC0B /* PillarLib.h */,
+				9E02A9041C1DDA350091FC0B /* PillarLib.m */,
+			);
+			path = PillarLib;
+			sourceTree = "<group>";
+		};
 		9E45F9761C1CA9C600EAE229 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +173,7 @@
 				9E45F9811C1CA9C600EAE229 /* Pillar */,
 				9E45F99B1C1CA9C800EAE229 /* PillarTests */,
 				9E45F9A61C1CA9C800EAE229 /* PillarUITests */,
+				9E02A9011C1DDA350091FC0B /* PillarLib */,
 				9E45F9801C1CA9C600EAE229 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,6 +184,7 @@
 				9E45F97F1C1CA9C600EAE229 /* Pillar.app */,
 				9E45F9981C1CA9C800EAE229 /* PillarTests.xctest */,
 				9E45F9A31C1CA9C800EAE229 /* PillarUITests.xctest */,
+				9E02A9001C1DDA340091FC0B /* libPillarLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,6 +337,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9E02A8FF1C1DDA340091FC0B /* PillarLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E02A9081C1DDA350091FC0B /* Build configuration list for PBXNativeTarget "PillarLib" */;
+			buildPhases = (
+				9E02A8FC1C1DDA340091FC0B /* Sources */,
+				9E02A8FD1C1DDA340091FC0B /* Frameworks */,
+				9E02A8FE1C1DDA340091FC0B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PillarLib;
+			productName = PillarLib;
+			productReference = 9E02A9001C1DDA340091FC0B /* libPillarLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		9E45F97E1C1CA9C600EAE229 /* Pillar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E45F9AC1C1CA9C800EAE229 /* Build configuration list for PBXNativeTarget "Pillar" */;
@@ -356,6 +416,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Adawat;
 				TargetAttributes = {
+					9E02A8FF1C1DDA340091FC0B = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					9E45F97E1C1CA9C600EAE229 = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -385,6 +448,7 @@
 				9E45F97E1C1CA9C600EAE229 /* Pillar */,
 				9E45F9971C1CA9C800EAE229 /* PillarTests */,
 				9E45F9A21C1CA9C800EAE229 /* PillarUITests */,
+				9E02A8FF1C1DDA340091FC0B /* PillarLib */,
 			);
 		};
 /* End PBXProject section */
@@ -417,6 +481,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9E02A8FC1C1DDA340091FC0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E02A9371C1DDABC0091FC0B /* Log.cpp in Sources */,
+				9E02A9381C1DDABC0091FC0B /* Memory.cpp in Sources */,
+				9E02A9391C1DDABC0091FC0B /* Timer.cpp in Sources */,
+				9E02A93A1C1DDABC0091FC0B /* EventManager.cpp in Sources */,
+				9E02A93B1C1DDABC0091FC0B /* InputManager.cpp in Sources */,
+				9E02A93C1C1DDABC0091FC0B /* PillarPlugin.cpp in Sources */,
+				9E02A93D1C1DDABC0091FC0B /* SceneManager.cpp in Sources */,
+				9E02A93E1C1DDABD0091FC0B /* TaskManager.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E45F97B1C1CA9C600EAE229 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,6 +565,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9E02A9061C1DDA350091FC0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation,
+					../../Src/Plugin,
+					../../Dependencies/Include,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9E02A9071C1DDA350091FC0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation,
+					../../Src/Plugin,
+					../../Dependencies/Include,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		9E45F9AA1C1CA9C800EAE229 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -522,6 +629,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation,
+					../../Src/Plugin,
+					../../Dependencies/Include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -560,6 +672,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation,
+					../../Src/Plugin,
+					../../Dependencies/Include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -574,8 +691,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (
 					../../Src/Foundation,
+					../../Src/Plugin,
 					../../Dependencies/Include,
-					../../Dependencies/Include/SDL,
 				);
 				INFOPLIST_FILE = Pillar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -592,8 +709,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (
 					../../Src/Foundation,
+					../../Src/Plugin,
 					../../Dependencies/Include,
-					../../Dependencies/Include/SDL,
 				);
 				INFOPLIST_FILE = Pillar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -655,6 +772,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9E02A9081C1DDA350091FC0B /* Build configuration list for PBXNativeTarget "PillarLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E02A9061C1DDA350091FC0B /* Debug */,
+				9E02A9071C1DDA350091FC0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9E45F97A1C1CA9C600EAE229 /* Build configuration list for PBXProject "Pillar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -163,7 +163,7 @@
 
 // bool
 #ifndef BOOL
-	typedef int                 BOOL;
+#   define BOOL                 s8                 
 #endif  // BOOL
 
 // TRUE

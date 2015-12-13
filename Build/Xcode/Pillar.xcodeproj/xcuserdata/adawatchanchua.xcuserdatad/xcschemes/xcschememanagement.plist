@@ -7,11 +7,21 @@
 		<key>Pillar.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>PillarLib.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>9E02A8FF1C1DDA340091FC0B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9E45F97E1C1CA9C600EAE229</key>
 		<dict>
 			<key>primary</key>
