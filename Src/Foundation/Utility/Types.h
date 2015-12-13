@@ -161,11 +161,6 @@
 
 #endif
 
-// bool
-#ifndef BOOL
-#   define BOOL                 s8                 
-#endif  // BOOL
-
 // TRUE
 #ifndef TRUE
 #	define TRUE					1
