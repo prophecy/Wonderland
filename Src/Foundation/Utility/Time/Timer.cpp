@@ -28,6 +28,11 @@
 
 #include "Timer.h"
 
+
+#if WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_WINDOWS || WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_ANDROID
+// SDL
+#include <SDL.h>
+
 static u64 _s_tickCurrent	= 0;
 static u64 _s_tickPrevious	= 0;
 
@@ -60,3 +65,28 @@ f64 Timer::GetHighPrecisionFps()
 {
 	return 1.0 / GetHighPrecisionDeltaTime();
 }
+#else // Stub function for iPhone
+void Timer::Update()
+{
+}
+
+f32 Timer::GetDeltaTime()
+{
+    return 0.0f;
+}
+
+f32 Timer::GetFps()
+{
+    return 1.0f;
+}
+
+f64 Timer::GetHighPrecisionDeltaTime()
+{
+    return 1.0;
+}
+
+f64 Timer::GetHighPrecisionFps()
+{
+    return 1.0;
+}
+#endif

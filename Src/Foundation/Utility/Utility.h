@@ -29,9 +29,6 @@
 #ifndef	__UTILITY_H__
 #define __UTILITY_H__
 
-// SDL
-#include <SDL.h>
-
 // Math
 #include <cml/cml.h>
 

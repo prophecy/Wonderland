@@ -16,9 +16,7 @@
 		9E45F99D1C1CA9C800EAE229 /* PillarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F99C1C1CA9C800EAE229 /* PillarTests.m */; };
 		9E45F9A81C1CA9C800EAE229 /* PillarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9A71C1CA9C800EAE229 /* PillarUITests.m */; };
 		9E45F9EA1C1CAAA000EAE229 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9CB1C1CAAA000EAE229 /* Log.cpp */; };
-		9E45F9EB1C1CAAA000EAE229 /* GenericPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9CE1C1CAAA000EAE229 /* GenericPool.cpp */; };
 		9E45F9EC1C1CAAA000EAE229 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9D01C1CAAA000EAE229 /* Memory.cpp */; };
-		9E45F9ED1C1CAAA000EAE229 /* PoolFacade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9D31C1CAAA000EAE229 /* PoolFacade.cpp */; };
 		9E45F9EE1C1CAAA000EAE229 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9DA1C1CAAA000EAE229 /* Timer.cpp */; };
 		9E45F9EF1C1CAAA000EAE229 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E01C1CAAA000EAE229 /* EventManager.cpp */; };
 		9E45F9F01C1CAAA000EAE229 /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9E21C1CAAA000EAE229 /* InputManager.cpp */; };
@@ -80,14 +78,9 @@
 		9E45F9C91C1CAAA000EAE229 /* FactoryScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactoryScript.h; sourceTree = "<group>"; };
 		9E45F9CB1C1CAAA000EAE229 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
 		9E45F9CC1C1CAAA000EAE229 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
-		9E45F9CE1C1CAAA000EAE229 /* GenericPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericPool.cpp; sourceTree = "<group>"; };
-		9E45F9CF1C1CAAA000EAE229 /* GenericPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericPool.h; sourceTree = "<group>"; };
 		9E45F9D01C1CAAA000EAE229 /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
 		9E45F9D11C1CAAA000EAE229 /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory.h; sourceTree = "<group>"; };
 		9E45F9D21C1CAAA000EAE229 /* MemoryHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryHandle.h; sourceTree = "<group>"; };
-		9E45F9D31C1CAAA000EAE229 /* PoolFacade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolFacade.cpp; sourceTree = "<group>"; };
-		9E45F9D41C1CAAA000EAE229 /* PoolFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolFacade.h; sourceTree = "<group>"; };
-		9E45F9D51C1CAAA000EAE229 /* PoolLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolLib.h; sourceTree = "<group>"; };
 		9E45F9D61C1CAAA000EAE229 /* WonderPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WonderPtr.h; sourceTree = "<group>"; };
 		9E45F9D71C1CAAA000EAE229 /* RTTI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTTI.h; sourceTree = "<group>"; };
 		9E45F9D81C1CAAA000EAE229 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -256,14 +249,9 @@
 		9E45F9CD1C1CAAA000EAE229 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
-				9E45F9CE1C1CAAA000EAE229 /* GenericPool.cpp */,
-				9E45F9CF1C1CAAA000EAE229 /* GenericPool.h */,
 				9E45F9D01C1CAAA000EAE229 /* Memory.cpp */,
 				9E45F9D11C1CAAA000EAE229 /* Memory.h */,
 				9E45F9D21C1CAAA000EAE229 /* MemoryHandle.h */,
-				9E45F9D31C1CAAA000EAE229 /* PoolFacade.cpp */,
-				9E45F9D41C1CAAA000EAE229 /* PoolFacade.h */,
-				9E45F9D51C1CAAA000EAE229 /* PoolLib.h */,
 				9E45F9D61C1CAAA000EAE229 /* WonderPtr.h */,
 			);
 			path = Memory;
@@ -437,13 +425,11 @@
 				9E45F9EC1C1CAAA000EAE229 /* Memory.cpp in Sources */,
 				9E45F9F21C1CAAA000EAE229 /* SceneManager.cpp in Sources */,
 				9E45F98A1C1CA9C600EAE229 /* ViewController.m in Sources */,
-				9E45F9ED1C1CAAA000EAE229 /* PoolFacade.cpp in Sources */,
 				9E45F9F11C1CAAA000EAE229 /* PillarPlugin.cpp in Sources */,
 				9E45F9F01C1CAAA000EAE229 /* InputManager.cpp in Sources */,
 				9E45F9EE1C1CAAA000EAE229 /* Timer.cpp in Sources */,
 				9E45F9871C1CA9C600EAE229 /* AppDelegate.m in Sources */,
 				9E45F9F31C1CAAA000EAE229 /* TaskManager.cpp in Sources */,
-				9E45F9EB1C1CAAA000EAE229 /* GenericPool.cpp in Sources */,
 				9E45F9EA1C1CAAA000EAE229 /* Log.cpp in Sources */,
 				9E45F9841C1CA9C600EAE229 /* main.m in Sources */,
 			);
