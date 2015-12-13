@@ -573,7 +573,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (
-					../../Src/Foundation/Utility,
 					../../Src/Foundation,
 					../../Dependencies/Include,
 					../../Dependencies/Include/SDL,
@@ -592,7 +591,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (
-					../../Src/Foundation/Utility,
 					../../Src/Foundation,
 					../../Dependencies/Include,
 					../../Dependencies/Include/SDL,
