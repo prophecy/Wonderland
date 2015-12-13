@@ -29,7 +29,7 @@
 #ifndef __SCENE_MANAGER_H__
 #define __SCENE_MANAGER_H__
 
-#include "Utility.h"
+#include "Utility/Utility.h"
 #include "ISceneManager.h"
 
 class IScene;

@@ -29,7 +29,7 @@
 #ifndef __INPUT_MANAGER_H__
 #define __INPUT_MANAGER_H__
 
-#include "Singleton.h"
+#include "Utility/Singleton.h"
 #include "IInput.h"
 
 class InputManager : public Singleton<InputManager>

@@ -30,7 +30,7 @@
 #include "IScene.h"
 #include "TaskManager.h"
 #include "EventManager.h"
-#include "MemoryHandle.h"
+#include "Utility/Memory/MemoryHandle.h"
 #include "Memory.h"
 
 static u32 _s_sceneIdCurrent = 0;

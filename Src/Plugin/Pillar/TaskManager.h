@@ -29,7 +29,7 @@
 #ifndef __TASK_MANAGER_H__
 #define __TASK_MANAGER_H__
 
-#include "Utility.h"
+#include "Utility/Utility.h"
 #include "ITaskManager.h"
 #include "IEntity.h"
 

@@ -29,7 +29,7 @@
 #include "PillarPlugin.h"
 #include "IScene.h"
 #include "SceneManager.h"
-#include "Log.h"
+#include "Utility/Log/Log.h"
 #include "Florist.h"
 
 void PillarPlugin::Create(WonderPtr<IApplication>	application)
