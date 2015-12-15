@@ -43,6 +43,7 @@ public:
 	virtual void Stop() = 0;
 	virtual void Resume() = 0;
 	virtual void Pause() = 0;
+    virtual void Update() = 0;
 };
 
 #endif // __I_PLUGIN_H__

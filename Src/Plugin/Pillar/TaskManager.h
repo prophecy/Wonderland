@@ -36,9 +36,7 @@
 class TaskManager : public ITaskManager
 {
 public:
-	virtual void UpdateTasksResource();
-	virtual void UpdateTasksRender();
-	virtual void UpdateTasksCalculator();
+	virtual void UpdateTasks();
 	virtual void AddTask(WonderPtr<ITask> task);
 	virtual void StartTask(WonderPtr<ITask> task);
 	virtual void StopTask(WonderPtr<ITask> task);

@@ -32,6 +32,7 @@
 #include "IBase.h"
 #include "ISceneManager.h"
 #include "IEventManager.h"
+#include "ITaskmanager.h"
 
 class IApplication : public IBase
 {

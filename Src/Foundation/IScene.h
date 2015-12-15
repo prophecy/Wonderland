@@ -32,7 +32,6 @@
 #include "IBase.h"
 #include "ITaskManager.h"
 #include "IEventManager.h"
-#include "IEntityManager.h"
 #include "IEntity.h"
 
 class ISceneManager;
@@ -158,7 +157,6 @@ public:
 	WonderPtr<ISceneManager>	sceneManager;
 	WonderPtr<ITaskManager>		taskManager;
 	WonderPtr<IEventManager>	eventManager;
-	WonderPtr<IEntityManager>	entityManager;
 };
 
 #endif // __ISCENE_H__

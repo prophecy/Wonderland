@@ -52,3 +52,11 @@ void PillarPlugin::Create(WonderPtr<IApplication>	application)
 
 	LogDebug("Create PillarPlugin, finished!");
 }
+
+void PillarPlugin::Update()
+{
+    application->sceneManager->OnChangeScene();
+    //application->sceneManager->GetCurrentScene()->taskManager->UpdateTasks();
+    WonderPtr<ITaskManager> tm = application->sceneManager->GetCurrentScene()->taskManager;
+    tm->UpdateTasks();
+}

@@ -36,9 +36,7 @@ class ITask;
 class ITaskManager : public IBase
 {
 public:
-	virtual void UpdateTasksResource()		= 0;
-	virtual void UpdateTasksRender()		= 0;
-	virtual void UpdateTasksCalculator()	= 0;
+	virtual void UpdateTasks()		= 0;
 	virtual void AddTask(WonderPtr<ITask> task) = 0;
 	virtual void StartTask(WonderPtr<ITask> task) = 0;
 	virtual void StopTask(WonderPtr<ITask> task) = 0;

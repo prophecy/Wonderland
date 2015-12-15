@@ -1,4 +1,4 @@
-/*
+#/*
  * This source file is part of Pillar, the C++ Cross-platform middleware for game
  *
  * For the latest information, see https://github.com/prophecy/Pillar

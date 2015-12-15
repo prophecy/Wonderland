@@ -74,7 +74,7 @@ void SceneManager::RemoveScene(WonderPtr<IScene> scene)
 
 	// tear scene down
 	scene->taskManager.Free();
-	scene->entityManager.Free();
+    scene->eventManager.Free();
 
 	// remove
 	std::map<WonderPtr<IScene>, u32>::iterator it;

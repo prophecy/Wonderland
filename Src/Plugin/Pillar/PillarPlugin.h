@@ -46,7 +46,8 @@ public:
 	virtual void Stop() {}
 	virtual void Resume() {}
 	virtual void Pause() {}
-
+    virtual void Update();
+    
 private:
 	WonderPtr<IApplication>	application;
 };
