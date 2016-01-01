@@ -43,8 +43,7 @@ void PillarPlugin::Create(WonderPtr<IApplication>	application)
 	this->application = application;
 
 	// Scene manager
-    WonderPtr<SceneManager> sm = CreateElement<SceneManager>();
-	application->sceneManager = sm;
+	application->sceneManager = CreateElement<SceneManager>().To<ISceneManager>();
 
 	// Create application
 	application->Create();
@@ -56,7 +55,5 @@ void PillarPlugin::Create(WonderPtr<IApplication>	application)
 void PillarPlugin::Update()
 {
     application->sceneManager->OnChangeScene();
-    //application->sceneManager->GetCurrentScene()->taskManager->UpdateTasks();
-    WonderPtr<ITaskManager> tm = application->sceneManager->GetCurrentScene()->taskManager;
-    tm->UpdateTasks();
+    application->sceneManager->GetCurrentScene()->taskManager->UpdateTasks();
 }
