@@ -41,6 +41,12 @@ protected:
 		ptr.Alloc();
 		return ptr;
 	}
+
+	template <typename T>
+	void DestroyElement(WonderPtr<T> element)
+	{
+		element.Free();
+	}
 };
 
 #endif // __I_BASE_H__

@@ -39,13 +39,11 @@ class IScene;
 class ITask : public IElement
 {
 public:
-	virtual void Create()	{};		// Optional
-	virtual void Destroy()	{};		// Optional
-	virtual void Start()	{};		// Optional
-	virtual void OnTask()	= 0;	// Required
-	virtual void Stop()		{};		// Optional
-	virtual void OnEvent(IEvent* evt, s32 code, std::string message)	{}	// Optional
-	virtual void OnEvent(IEvent* evt, s8* data)							{}	// Optional
+	virtual void Start() {}
+	virtual void Stop() {}
+	virtual void OnTask() = 0;
+	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
+	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
 
 public:
 	IScene*					scene;

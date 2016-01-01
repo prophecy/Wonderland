@@ -48,8 +48,6 @@ void PillarPlugin::Create(WonderPtr<IApplication>	application)
 	// Create application
 	application->Create();
 	application->sceneManager->GetCurrentScene()->Create();
-
-	LogDebug("Create PillarPlugin, finished!");
 }
 
 void PillarPlugin::Update()

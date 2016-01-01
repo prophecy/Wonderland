@@ -30,8 +30,9 @@
 #define __I_ELEMENT_H__
 
 #include "Utility/RTTI.h"
+#include "IBase.h"
 
-class IElement
+class IElement : public IBase
 {
 public:
 	static RTTI rtti;

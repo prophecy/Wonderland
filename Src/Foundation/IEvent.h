@@ -36,8 +36,8 @@ class ITask;
 class IEvent : public IElement
 {
 public:
-	virtual void BindTask(WonderPtr<ITask> task)					= 0;
-	virtual void Notify(s32 code, std::string message)	= 0;
+	virtual void BindTask(WonderPtr<ITask> task) = 0;
+	virtual void Notify(s32 code, std::string message) = 0;
 };
 
 #endif // __IEVENT_H__
