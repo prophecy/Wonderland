@@ -32,21 +32,17 @@
 
 void EventManager::BindTask(WonderPtr<ITask> task)
 {
-	_tasks.push_back(task);
+//	_tasks.push_back(task);
 }
 
 void EventManager::Notify(s32 code, std::string message)
 {
-	std::vector<ITask*>::iterator it;
-
-	for (u32 i = 0; i < _tasks.size(); ++i)
-		_tasks[i]->OnEvent(this, code, message);
+//	for (u32 i = 0; i < _tasks.size(); ++i)
+//		_tasks[i]->OnEvent(this, code, message);
 }
 
 void EventManager::Notify(s8* data)
 {
-	std::vector<ITask*>::iterator it;
-
-	for (u32 i = 0; i < _tasks.size(); ++i)
-		_tasks[i]->OnEvent(this, data);
+//	for (u32 i = 0; i < _tasks.size(); ++i)
+//		_tasks[i]->OnEvent(this, data);
 }
