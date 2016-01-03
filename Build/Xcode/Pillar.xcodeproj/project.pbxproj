@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E02A9031C1DDA350091FC0B /* PillarLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9E02A9021C1DDA350091FC0B /* PillarLib.h */; };
 		9E02A9371C1DDABC0091FC0B /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9CB1C1CAAA000EAE229 /* Log.cpp */; };
 		9E02A9381C1DDABC0091FC0B /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9D01C1CAAA000EAE229 /* Memory.cpp */; };
 		9E02A9391C1DDABC0091FC0B /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9DA1C1CAAA000EAE229 /* Timer.cpp */; };
@@ -22,8 +21,6 @@
 		9E45F98D1C1CA9C800EAE229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E45F98B1C1CA9C800EAE229 /* Main.storyboard */; };
 		9E45F98F1C1CA9C800EAE229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E45F98E1C1CA9C800EAE229 /* Assets.xcassets */; };
 		9E45F9921C1CA9C800EAE229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E45F9901C1CA9C800EAE229 /* LaunchScreen.storyboard */; };
-		9E45F99D1C1CA9C800EAE229 /* PillarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F99C1C1CA9C800EAE229 /* PillarTests.m */; };
-		9E45F9A81C1CA9C800EAE229 /* PillarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9A71C1CA9C800EAE229 /* PillarUITests.m */; };
 		9E45F9EA1C1CAAA000EAE229 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9CB1C1CAAA000EAE229 /* Log.cpp */; };
 		9E45F9EC1C1CAAA000EAE229 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9D01C1CAAA000EAE229 /* Memory.cpp */; };
 		9E45F9EE1C1CAAA000EAE229 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E45F9DA1C1CAAA000EAE229 /* Timer.cpp */; };
@@ -58,7 +55,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				9E02A9031C1DDA350091FC0B /* PillarLib.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,8 +62,6 @@
 
 /* Begin PBXFileReference section */
 		9E02A9001C1DDA340091FC0B /* libPillarLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPillarLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E02A9021C1DDA350091FC0B /* PillarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PillarLib.h; sourceTree = "<group>"; };
-		9E02A9041C1DDA350091FC0B /* PillarLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PillarLib.m; sourceTree = "<group>"; };
 		9E45F97F1C1CA9C600EAE229 /* Pillar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pillar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E45F9831C1CA9C600EAE229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E45F9851C1CA9C600EAE229 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,11 +73,7 @@
 		9E45F9911C1CA9C800EAE229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E45F9931C1CA9C800EAE229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E45F9981C1CA9C800EAE229 /* PillarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PillarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E45F99C1C1CA9C800EAE229 /* PillarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PillarTests.m; sourceTree = "<group>"; };
-		9E45F99E1C1CA9C800EAE229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E45F9A31C1CA9C800EAE229 /* PillarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PillarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E45F9A71C1CA9C800EAE229 /* PillarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PillarUITests.m; sourceTree = "<group>"; };
-		9E45F9A91C1CA9C800EAE229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E45F9B81C1CAAA000EAE229 /* Florist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Florist.h; sourceTree = "<group>"; };
 		9E45F9B91C1CAAA000EAE229 /* IApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IApplication.h; sourceTree = "<group>"; };
 		9E45F9BA1C1CAAA000EAE229 /* IBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBase.h; sourceTree = "<group>"; };
@@ -156,23 +146,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9E02A9011C1DDA350091FC0B /* PillarLib */ = {
-			isa = PBXGroup;
-			children = (
-				9E02A9021C1DDA350091FC0B /* PillarLib.h */,
-				9E02A9041C1DDA350091FC0B /* PillarLib.m */,
-			);
-			path = PillarLib;
-			sourceTree = "<group>";
-		};
 		9E45F9761C1CA9C600EAE229 = {
 			isa = PBXGroup;
 			children = (
 				9E45F9B61C1CAAA000EAE229 /* Src */,
 				9E45F9811C1CA9C600EAE229 /* Pillar */,
-				9E45F99B1C1CA9C800EAE229 /* PillarTests */,
-				9E45F9A61C1CA9C800EAE229 /* PillarUITests */,
-				9E02A9011C1DDA350091FC0B /* PillarLib */,
 				9E45F9801C1CA9C600EAE229 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -210,24 +188,6 @@
 				9E45F9831C1CA9C600EAE229 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9E45F99B1C1CA9C800EAE229 /* PillarTests */ = {
-			isa = PBXGroup;
-			children = (
-				9E45F99C1C1CA9C800EAE229 /* PillarTests.m */,
-				9E45F99E1C1CA9C800EAE229 /* Info.plist */,
-			);
-			path = PillarTests;
-			sourceTree = "<group>";
-		};
-		9E45F9A61C1CA9C800EAE229 /* PillarUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9E45F9A71C1CA9C800EAE229 /* PillarUITests.m */,
-				9E45F9A91C1CA9C800EAE229 /* Info.plist */,
-			);
-			path = PillarUITests;
 			sourceTree = "<group>";
 		};
 		9E45F9B61C1CAAA000EAE229 /* Src */ = {
@@ -516,7 +476,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E45F99D1C1CA9C800EAE229 /* PillarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +483,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E45F9A81C1CA9C800EAE229 /* PillarUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
