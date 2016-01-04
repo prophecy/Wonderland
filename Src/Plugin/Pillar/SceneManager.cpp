@@ -41,20 +41,11 @@ u32 SceneManager::AddScene(WonderPtr<IScene> scene)
 	_currentScene = NULL;
 	_previousScene = NULL;
 
-	// check is duplicate scene
-	//bool isDuplicate	= false;
-	//if (_sceneMapReverse.count(scene))
-	//	isDuplicate		= true;
-
-	//if ( isDuplicate )
-	//	return 0;
-
 	// increse scene counter
 	++_s_sceneIdCurrent;
 
 	// insert scene to map
 	_sceneMap.insert(std::pair<u32, WonderPtr<IScene>>(_s_sceneIdCurrent, scene));
-	//_sceneMapReverse.insert(std::pair<WonderPtr<IScene>, u32>(scene, _s_sceneIdCurrent));
 
 	// Create necessary stuff for scene
 	MemoryHandle<TaskManager>* hTaskMgr = ALLOC(TaskManager);
@@ -66,34 +57,10 @@ u32 SceneManager::AddScene(WonderPtr<IScene> scene)
 	return _s_sceneIdCurrent;
 }
 
-void SceneManager::RemoveScene(WonderPtr<IScene> scene)
-{
-	bool isSceneExist = false;
-	//if (_sceneMapReverse.count(scene))
-	//	isSceneExist = true;
-
-	// tear scene down
-	scene->taskManager.Free();
-    scene->eventManager.Free();
-
-	// remove
-	std::map<WonderPtr<IScene>, u32>::iterator it;
-	//it = _sceneMapReverse.find(scene);
-	_sceneMap.erase(it->second);
-	//_sceneMapReverse.erase(scene);
-}
-
 void SceneManager::RemoveScene(u32 code)
 {
-	bool isSceneExist = false;
 	if (_sceneMap.count(code))
-		isSceneExist = true;
-
-	// remove
-	std::map<u32, WonderPtr<IScene>>::iterator it;
-	it = _sceneMap.find(code);
-	//_sceneMapReverse.erase(it->second);
-	_sceneMap.erase(code);
+        _sceneMap.erase(code);
 }
 
 void SceneManager::StartScene(WonderPtr<IScene> scene)

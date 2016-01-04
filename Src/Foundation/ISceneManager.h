@@ -38,7 +38,6 @@ class ISceneManager : public IBase
 {
 public:
 	virtual u32 AddScene(WonderPtr<IScene> scene)			= 0;
-	virtual void RemoveScene(WonderPtr<IScene> scene)		= 0;
 	virtual void RemoveScene(u32 sceneId)					= 0;
 	virtual void StartScene(WonderPtr<IScene> scene)		= 0;
 	virtual void SetNextScene(u32 sceneCode)				= 0;

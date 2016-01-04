@@ -39,7 +39,6 @@ class SceneManager : public ISceneManager
 {
 public:
 	u32 AddScene(WonderPtr<IScene> scene);
-	void RemoveScene(WonderPtr<IScene> scene);
 	void RemoveScene(u32 sceneId);
 	void StartScene(WonderPtr<IScene> scene);
 	void SetNextScene(u32 sceneCode);
@@ -50,7 +49,6 @@ private:
 	WonderPtr<IScene> _currentScene;
 	WonderPtr<IScene> _previousScene;
 	std::map<u32, WonderPtr<IScene>>	_sceneMap;
-	//std::map<WonderPtr<IScene>, u32>	_sceneMapReverse;
 };
 
 #endif // __SCENE_MANAGER_H__

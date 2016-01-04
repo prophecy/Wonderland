@@ -102,7 +102,7 @@
 
 #elif WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_IOS
 
-#if __x86_64__ || __ppc64__
+#if __x86_64__ || __ppc64__ || __LP64__
     typedef	unsigned long		addr;
 #else
     typedef	unsigned int		addr;
