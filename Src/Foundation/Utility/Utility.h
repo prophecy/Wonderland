@@ -73,7 +73,7 @@ std::string ToStdString(T i)
     return s;
 }
 
-#define ToString(var) ToStdString(var)
+#define TO_STR(var)         ToStdString(var)
 #define APPEND_STR(str)		+ std::string(str)
 
 // String concat
