@@ -159,3 +159,6 @@ Samples/**/**/Resource/Character/Spartans.json
 
 # Xcode projects
 *.xcuserstate
+
+# DS_Store (OS X)
+*.DS_Store
