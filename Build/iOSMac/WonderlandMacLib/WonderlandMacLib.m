@@ -1,13 +1,13 @@
 //
-//  WonderlandLib.m
-//  WonderlandLib
+//  WonderlandMacLib.m
+//  WonderlandMacLib
 //
 //  Created by Adawat Chanchua on 8/11/2559 BE.
 //  Copyright © 2559 Adawat Chanchua. All rights reserved.
 //
 
-#import "WonderlandLib.h"
+#import "WonderlandMacLib.h"
 
-@implementation WonderlandLib
+@implementation WonderlandMacLib
 
 @end

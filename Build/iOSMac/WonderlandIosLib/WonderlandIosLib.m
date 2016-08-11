@@ -1,13 +1,13 @@
 //
-//  WonderlandLib.h
-//  WonderlandLib
+//  WonderlandIosLib.m
+//  WonderlandIosLib
 //
 //  Created by Adawat Chanchua on 8/11/2559 BE.
 //  Copyright © 2559 Adawat Chanchua. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "WonderlandIosLib.h"
 
-@interface WonderlandLib : NSObject
+@implementation WonderlandIosLib
 
 @end
