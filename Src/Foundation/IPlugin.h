@@ -1,8 +1,8 @@
 
 /*
-* This source file is part of Pillar, the C++ Cross-platform middleware for game
+* This source file is part of Wonderland, the C++ Cross-platform middleware for game
 *
-* For the latest information, see https://github.com/prophecy/Pillar
+* For the latest information, see https://github.com/prophecy/Wonderland
 *
 * The MIT License (MIT)
 * Copyright (c) 2015 Adawat Chanchua

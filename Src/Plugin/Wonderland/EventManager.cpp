@@ -26,30 +26,23 @@
  *
  */
 
-#ifndef __ITASK_H__
-#define __ITASK_H__
+#include "EventManager.h"
+#include "ITask.h"
+#include "TaskManager.h"
 
-#include "IElement.h"
-
-class TaskManager;
-class IEntity;
-class IEvent;
-class IScene;
-
-class ITask : public IElement
+void EventManager::BindTask(WonderPtr<ITask> task)
 {
-public:
-	virtual void Start() {}
-	virtual void Stop() {}
-	virtual void OnTask() = 0;
-	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
-	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
+//	_tasks.push_back(task);
+}
 
-public:
-	IScene*					scene;
-	TaskManager*			taskManager;
-	std::vector<WonderPtr<IEntity>>		entities;
-	std::vector<WonderPtr<IEntity>>		tasks;
-};
+void EventManager::Notify(s32 code, std::string message)
+{
+//	for (u32 i = 0; i < _tasks.size(); ++i)
+//		_tasks[i]->OnEvent(this, code, message);
+}
 
-#endif // __ITASK_H__
+void EventManager::Notify(s8* data)
+{
+//	for (u32 i = 0; i < _tasks.size(); ++i)
+//		_tasks[i]->OnEvent(this, data);
+}

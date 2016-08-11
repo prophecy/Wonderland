@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BDBE2E3F1D5C5754005E4461 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E251D5C5754005E4461 /* Log.cpp */; };
+		BDBE2E401D5C5754005E4461 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E251D5C5754005E4461 /* Log.cpp */; };
+		BDBE2E411D5C5754005E4461 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E281D5C5754005E4461 /* Memory.cpp */; };
+		BDBE2E421D5C5754005E4461 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E281D5C5754005E4461 /* Memory.cpp */; };
+		BDBE2E431D5C5754005E4461 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E2F1D5C5754005E4461 /* Timer.cpp */; };
+		BDBE2E441D5C5754005E4461 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E2F1D5C5754005E4461 /* Timer.cpp */; };
+		BDBE2E451D5C5754005E4461 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E351D5C5754005E4461 /* EventManager.cpp */; };
+		BDBE2E461D5C5754005E4461 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E351D5C5754005E4461 /* EventManager.cpp */; };
+		BDBE2E471D5C5754005E4461 /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E371D5C5754005E4461 /* InputManager.cpp */; };
+		BDBE2E481D5C5754005E4461 /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E371D5C5754005E4461 /* InputManager.cpp */; };
+		BDBE2E491D5C5754005E4461 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E391D5C5754005E4461 /* SceneManager.cpp */; };
+		BDBE2E4A1D5C5754005E4461 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E391D5C5754005E4461 /* SceneManager.cpp */; };
+		BDBE2E4B1D5C5754005E4461 /* TaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E3B1D5C5754005E4461 /* TaskManager.cpp */; };
+		BDBE2E4C1D5C5754005E4461 /* TaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E3B1D5C5754005E4461 /* TaskManager.cpp */; };
+		BDBE2E4D1D5C5754005E4461 /* WonderlandPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E3D1D5C5754005E4461 /* WonderlandPlugin.cpp */; };
+		BDBE2E4E1D5C5754005E4461 /* WonderlandPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDBE2E3D1D5C5754005E4461 /* WonderlandPlugin.cpp */; };
+		BDFBF4A51D5C2335009F7A5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBF4A41D5C2335009F7A5F /* main.m */; };
+		BDFBF4A81D5C2335009F7A5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBF4A71D5C2335009F7A5F /* AppDelegate.m */; };
+		BDFBF4AB1D5C2335009F7A5F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBF4AA1D5C2335009F7A5F /* ViewController.m */; };
+		BDFBF4AE1D5C2335009F7A5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFBF4AC1D5C2335009F7A5F /* Main.storyboard */; };
+		BDFBF4B01D5C2335009F7A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFBF4AF1D5C2335009F7A5F /* Assets.xcassets */; };
+		BDFBF4B31D5C2335009F7A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFBF4B11D5C2335009F7A5F /* LaunchScreen.storyboard */; };
+		BDFBF4C31D5C3C99009F7A5F /* WonderlandLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BDFBF4C21D5C3C99009F7A5F /* WonderlandLib.h */; };
+		BDFBF4C51D5C3C99009F7A5F /* WonderlandLib.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBF4C41D5C3C99009F7A5F /* WonderlandLib.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BDFBF4BE1D5C3C98009F7A5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				BDFBF4C31D5C3C99009F7A5F /* WonderlandLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BDBE2E131D5C5754005E4461 /* Florist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Florist.h; sourceTree = "<group>"; };
+		BDBE2E141D5C5754005E4461 /* IApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IApplication.h; sourceTree = "<group>"; };
+		BDBE2E151D5C5754005E4461 /* IBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBase.h; sourceTree = "<group>"; };
+		BDBE2E161D5C5754005E4461 /* IElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IElement.h; sourceTree = "<group>"; };
+		BDBE2E171D5C5754005E4461 /* IEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEntity.h; sourceTree = "<group>"; };
+		BDBE2E181D5C5754005E4461 /* IEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEvent.h; sourceTree = "<group>"; };
+		BDBE2E191D5C5754005E4461 /* IEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEventManager.h; sourceTree = "<group>"; };
+		BDBE2E1A1D5C5754005E4461 /* IInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IInput.h; sourceTree = "<group>"; };
+		BDBE2E1B1D5C5754005E4461 /* IPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPlugin.h; sourceTree = "<group>"; };
+		BDBE2E1C1D5C5754005E4461 /* IRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRenderer.h; sourceTree = "<group>"; };
+		BDBE2E1D1D5C5754005E4461 /* IScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScene.h; sourceTree = "<group>"; };
+		BDBE2E1E1D5C5754005E4461 /* ISceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISceneManager.h; sourceTree = "<group>"; };
+		BDBE2E1F1D5C5754005E4461 /* ITask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITask.h; sourceTree = "<group>"; };
+		BDBE2E201D5C5754005E4461 /* ITaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITaskManager.h; sourceTree = "<group>"; };
+		BDBE2E221D5C5754005E4461 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		BDBE2E231D5C5754005E4461 /* FactoryScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactoryScript.h; sourceTree = "<group>"; };
+		BDBE2E251D5C5754005E4461 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
+		BDBE2E261D5C5754005E4461 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		BDBE2E281D5C5754005E4461 /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
+		BDBE2E291D5C5754005E4461 /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory.h; sourceTree = "<group>"; };
+		BDBE2E2A1D5C5754005E4461 /* MemoryHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryHandle.h; sourceTree = "<group>"; };
+		BDBE2E2B1D5C5754005E4461 /* WonderPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WonderPtr.h; sourceTree = "<group>"; };
+		BDBE2E2C1D5C5754005E4461 /* RTTI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTTI.h; sourceTree = "<group>"; };
+		BDBE2E2D1D5C5754005E4461 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		BDBE2E2F1D5C5754005E4461 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		BDBE2E301D5C5754005E4461 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		BDBE2E311D5C5754005E4461 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		BDBE2E321D5C5754005E4461 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		BDBE2E351D5C5754005E4461 /* EventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventManager.cpp; sourceTree = "<group>"; };
+		BDBE2E361D5C5754005E4461 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		BDBE2E371D5C5754005E4461 /* InputManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputManager.cpp; sourceTree = "<group>"; };
+		BDBE2E381D5C5754005E4461 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
+		BDBE2E391D5C5754005E4461 /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
+		BDBE2E3A1D5C5754005E4461 /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
+		BDBE2E3B1D5C5754005E4461 /* TaskManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaskManager.cpp; sourceTree = "<group>"; };
+		BDBE2E3C1D5C5754005E4461 /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
+		BDBE2E3D1D5C5754005E4461 /* WonderlandPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WonderlandPlugin.cpp; sourceTree = "<group>"; };
+		BDBE2E3E1D5C5754005E4461 /* WonderlandPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WonderlandPlugin.h; sourceTree = "<group>"; };
+		BDFBF4A01D5C2335009F7A5F /* Wonderland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wonderland.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDFBF4A41D5C2335009F7A5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BDFBF4A61D5C2335009F7A5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BDFBF4A71D5C2335009F7A5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BDFBF4A91D5C2335009F7A5F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BDFBF4AA1D5C2335009F7A5F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BDFBF4AD1D5C2335009F7A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BDFBF4AF1D5C2335009F7A5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BDFBF4B21D5C2335009F7A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BDFBF4B41D5C2335009F7A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDFBF4C01D5C3C98009F7A5F /* libWonderlandLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWonderlandLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDFBF4C21D5C3C99009F7A5F /* WonderlandLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WonderlandLib.h; sourceTree = "<group>"; };
+		BDFBF4C41D5C3C99009F7A5F /* WonderlandLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WonderlandLib.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDFBF49D1D5C2335009F7A5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDFBF4BD1D5C3C98009F7A5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BDBE2E111D5C5754005E4461 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE2E121D5C5754005E4461 /* Foundation */,
+				BDBE2E331D5C5754005E4461 /* Plugin */,
+			);
+			name = Src;
+			path = ../../Src;
+			sourceTree = "<group>";
+		};
+		BDBE2E121D5C5754005E4461 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE2E131D5C5754005E4461 /* Florist.h */,
+				BDBE2E141D5C5754005E4461 /* IApplication.h */,
+				BDBE2E151D5C5754005E4461 /* IBase.h */,
+				BDBE2E161D5C5754005E4461 /* IElement.h */,
+				BDBE2E171D5C5754005E4461 /* IEntity.h */,
+				BDBE2E181D5C5754005E4461 /* IEvent.h */,
+				BDBE2E191D5C5754005E4461 /* IEventManager.h */,
+				BDBE2E1A1D5C5754005E4461 /* IInput.h */,
+				BDBE2E1B1D5C5754005E4461 /* IPlugin.h */,
+				BDBE2E1C1D5C5754005E4461 /* IRenderer.h */,
+				BDBE2E1D1D5C5754005E4461 /* IScene.h */,
+				BDBE2E1E1D5C5754005E4461 /* ISceneManager.h */,
+				BDBE2E1F1D5C5754005E4461 /* ITask.h */,
+				BDBE2E201D5C5754005E4461 /* ITaskManager.h */,
+				BDBE2E211D5C5754005E4461 /* Utility */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		BDBE2E211D5C5754005E4461 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE2E221D5C5754005E4461 /* Factory.h */,
+				BDBE2E231D5C5754005E4461 /* FactoryScript.h */,
+				BDBE2E241D5C5754005E4461 /* Log */,
+				BDBE2E271D5C5754005E4461 /* Memory */,
+				BDBE2E2C1D5C5754005E4461 /* RTTI.h */,
+				BDBE2E2D1D5C5754005E4461 /* Singleton.h */,
+				BDBE2E2E1D5C5754005E4461 /* Time */,
+				BDBE2E311D5C5754005E4461 /* Types.h */,
+				BDBE2E321D5C5754005E4461 /* Utility.h */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		BDBE2E241D5C5754005E4461 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE2E251D5C5754005E4461 /* Log.cpp */,
+				BDBE2E261D5C5754005E4461 /* Log.h */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		BDBE2E271D5C5754005E4461 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE2E281D5C5754005E4461 /* Memory.cpp */,
+				BDBE2E291D5C5754005E4461 /* Memory.h */,
+				BDBE2E2A1D5C5754005E4461 /* MemoryHandle.h */,
+				BDBE2E2B1D5C5754005E4461 /* WonderPtr.h */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		BDBE2E2E1D5C5754005E4461 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE2E2F1D5C5754005E4461 /* Timer.cpp */,
+				BDBE2E301D5C5754005E4461 /* Timer.h */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		BDBE2E331D5C5754005E4461 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE2E341D5C5754005E4461 /* Wonderland */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		BDBE2E341D5C5754005E4461 /* Wonderland */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE2E351D5C5754005E4461 /* EventManager.cpp */,
+				BDBE2E361D5C5754005E4461 /* EventManager.h */,
+				BDBE2E371D5C5754005E4461 /* InputManager.cpp */,
+				BDBE2E381D5C5754005E4461 /* InputManager.h */,
+				BDBE2E391D5C5754005E4461 /* SceneManager.cpp */,
+				BDBE2E3A1D5C5754005E4461 /* SceneManager.h */,
+				BDBE2E3B1D5C5754005E4461 /* TaskManager.cpp */,
+				BDBE2E3C1D5C5754005E4461 /* TaskManager.h */,
+				BDBE2E3D1D5C5754005E4461 /* WonderlandPlugin.cpp */,
+				BDBE2E3E1D5C5754005E4461 /* WonderlandPlugin.h */,
+			);
+			path = Wonderland;
+			sourceTree = "<group>";
+		};
+		BDFBF4971D5C2335009F7A5F = {
+			isa = PBXGroup;
+			children = (
+				BDFBF4A21D5C2335009F7A5F /* Wonderland */,
+				BDFBF4C11D5C3C99009F7A5F /* WonderlandLib */,
+				BDFBF4A11D5C2335009F7A5F /* Products */,
+				BDBE2E111D5C5754005E4461 /* Src */,
+			);
+			sourceTree = "<group>";
+		};
+		BDFBF4A11D5C2335009F7A5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDFBF4A01D5C2335009F7A5F /* Wonderland.app */,
+				BDFBF4C01D5C3C98009F7A5F /* libWonderlandLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDFBF4A21D5C2335009F7A5F /* Wonderland */ = {
+			isa = PBXGroup;
+			children = (
+				BDFBF4A61D5C2335009F7A5F /* AppDelegate.h */,
+				BDFBF4A71D5C2335009F7A5F /* AppDelegate.m */,
+				BDFBF4A91D5C2335009F7A5F /* ViewController.h */,
+				BDFBF4AA1D5C2335009F7A5F /* ViewController.m */,
+				BDFBF4AC1D5C2335009F7A5F /* Main.storyboard */,
+				BDFBF4AF1D5C2335009F7A5F /* Assets.xcassets */,
+				BDFBF4B11D5C2335009F7A5F /* LaunchScreen.storyboard */,
+				BDFBF4B41D5C2335009F7A5F /* Info.plist */,
+				BDFBF4A31D5C2335009F7A5F /* Supporting Files */,
+			);
+			path = Wonderland;
+			sourceTree = "<group>";
+		};
+		BDFBF4A31D5C2335009F7A5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDFBF4A41D5C2335009F7A5F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BDFBF4C11D5C3C99009F7A5F /* WonderlandLib */ = {
+			isa = PBXGroup;
+			children = (
+				BDFBF4C21D5C3C99009F7A5F /* WonderlandLib.h */,
+				BDFBF4C41D5C3C99009F7A5F /* WonderlandLib.m */,
+			);
+			path = WonderlandLib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDFBF49F1D5C2335009F7A5F /* Wonderland */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDFBF4B71D5C2335009F7A5F /* Build configuration list for PBXNativeTarget "Wonderland" */;
+			buildPhases = (
+				BDFBF49C1D5C2335009F7A5F /* Sources */,
+				BDFBF49D1D5C2335009F7A5F /* Frameworks */,
+				BDFBF49E1D5C2335009F7A5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wonderland;
+			productName = Wonderland;
+			productReference = BDFBF4A01D5C2335009F7A5F /* Wonderland.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BDFBF4BF1D5C3C98009F7A5F /* WonderlandLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDFBF4C61D5C3C99009F7A5F /* Build configuration list for PBXNativeTarget "WonderlandLib" */;
+			buildPhases = (
+				BDFBF4BC1D5C3C98009F7A5F /* Sources */,
+				BDFBF4BD1D5C3C98009F7A5F /* Frameworks */,
+				BDFBF4BE1D5C3C98009F7A5F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WonderlandLib;
+			productName = WonderlandLib;
+			productReference = BDFBF4C01D5C3C98009F7A5F /* libWonderlandLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDFBF4981D5C2335009F7A5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Adawat Chanchua";
+				TargetAttributes = {
+					BDFBF49F1D5C2335009F7A5F = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					BDFBF4BF1D5C3C98009F7A5F = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = BDFBF49B1D5C2335009F7A5F /* Build configuration list for PBXProject "Wonderland" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BDFBF4971D5C2335009F7A5F;
+			productRefGroup = BDFBF4A11D5C2335009F7A5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDFBF49F1D5C2335009F7A5F /* Wonderland */,
+				BDFBF4BF1D5C3C98009F7A5F /* WonderlandLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BDFBF49E1D5C2335009F7A5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDFBF4B31D5C2335009F7A5F /* LaunchScreen.storyboard in Resources */,
+				BDFBF4B01D5C2335009F7A5F /* Assets.xcassets in Resources */,
+				BDFBF4AE1D5C2335009F7A5F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDFBF49C1D5C2335009F7A5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDFBF4AB1D5C2335009F7A5F /* ViewController.m in Sources */,
+				BDBE2E4D1D5C5754005E4461 /* WonderlandPlugin.cpp in Sources */,
+				BDFBF4A81D5C2335009F7A5F /* AppDelegate.m in Sources */,
+				BDBE2E3F1D5C5754005E4461 /* Log.cpp in Sources */,
+				BDBE2E431D5C5754005E4461 /* Timer.cpp in Sources */,
+				BDBE2E471D5C5754005E4461 /* InputManager.cpp in Sources */,
+				BDBE2E491D5C5754005E4461 /* SceneManager.cpp in Sources */,
+				BDFBF4A51D5C2335009F7A5F /* main.m in Sources */,
+				BDBE2E411D5C5754005E4461 /* Memory.cpp in Sources */,
+				BDBE2E4B1D5C5754005E4461 /* TaskManager.cpp in Sources */,
+				BDBE2E451D5C5754005E4461 /* EventManager.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDFBF4BC1D5C3C98009F7A5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDBE2E4A1D5C5754005E4461 /* SceneManager.cpp in Sources */,
+				BDBE2E421D5C5754005E4461 /* Memory.cpp in Sources */,
+				BDBE2E4E1D5C5754005E4461 /* WonderlandPlugin.cpp in Sources */,
+				BDBE2E461D5C5754005E4461 /* EventManager.cpp in Sources */,
+				BDBE2E481D5C5754005E4461 /* InputManager.cpp in Sources */,
+				BDBE2E401D5C5754005E4461 /* Log.cpp in Sources */,
+				BDFBF4C51D5C3C99009F7A5F /* WonderlandLib.m in Sources */,
+				BDBE2E4C1D5C5754005E4461 /* TaskManager.cpp in Sources */,
+				BDBE2E441D5C5754005E4461 /* Timer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BDFBF4AC1D5C2335009F7A5F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDFBF4AD1D5C2335009F7A5F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BDFBF4B11D5C2335009F7A5F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDFBF4B21D5C2335009F7A5F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BDFBF4B51D5C2335009F7A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BDFBF4B61D5C2335009F7A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDFBF4B81D5C2335009F7A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation,
+					../../Src/Plugin,
+					../../Dependencies/Include,
+				);
+				INFOPLIST_FILE = Wonderland/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wondersaga.Wonderland;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BDFBF4B91D5C2335009F7A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation,
+					../../Src/Plugin,
+					../../Dependencies/Include,
+				);
+				INFOPLIST_FILE = Wonderland/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wondersaga.Wonderland;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BDFBF4C71D5C3C99009F7A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation,
+					../../Src/Plugin,
+					../../Dependencies/Include,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BDFBF4C81D5C3C99009F7A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					../../Src/Foundation,
+					../../Src/Plugin,
+					../../Dependencies/Include,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BDFBF49B1D5C2335009F7A5F /* Build configuration list for PBXProject "Wonderland" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDFBF4B51D5C2335009F7A5F /* Debug */,
+				BDFBF4B61D5C2335009F7A5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDFBF4B71D5C2335009F7A5F /* Build configuration list for PBXNativeTarget "Wonderland" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDFBF4B81D5C2335009F7A5F /* Debug */,
+				BDFBF4B91D5C2335009F7A5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDFBF4C61D5C3C99009F7A5F /* Build configuration list for PBXNativeTarget "WonderlandLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDFBF4C71D5C3C99009F7A5F /* Debug */,
+				BDFBF4C81D5C3C99009F7A5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BDFBF4981D5C2335009F7A5F /* Project object */;
+}

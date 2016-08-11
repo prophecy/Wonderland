@@ -26,30 +26,30 @@
  *
  */
 
-#ifndef __ITASK_H__
-#define __ITASK_H__
+// Application starts all managers
 
-#include "IElement.h"
+#ifndef __WONDERLAND_PLUGIN_H__
+#define __WONDERLAND_PLUGIN_H__
 
-class TaskManager;
-class IEntity;
-class IEvent;
-class IScene;
+#include "Utility/Memory/WonderPtr.h"
 
-class ITask : public IElement
+#include "IPlugin.h"
+#include "IApplication.h"
+#include "ISceneManager.h"
+
+class WonderlandPlugin : public IPlugin
 {
 public:
+	virtual void Create(WonderPtr<IApplication>	application);
+	virtual void Destroy() {}
 	virtual void Start() {}
 	virtual void Stop() {}
-	virtual void OnTask() = 0;
-	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
-	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
-
-public:
-	IScene*					scene;
-	TaskManager*			taskManager;
-	std::vector<WonderPtr<IEntity>>		entities;
-	std::vector<WonderPtr<IEntity>>		tasks;
+	virtual void Resume() {}
+	virtual void Pause() {}
+    virtual void Update();
+    
+private:
+	WonderPtr<IApplication>	application;
 };
 
-#endif // __ITASK_H__
+#endif // __WONDERLAND_PLUGIN_H__

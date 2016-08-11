@@ -26,30 +26,27 @@
  *
  */
 
-#ifndef __ITASK_H__
-#define __ITASK_H__
+#ifndef __TASK_MANAGER_H__
+#define __TASK_MANAGER_H__
 
-#include "IElement.h"
+#include "Utility/Utility.h"
+#include "ITaskManager.h"
+#include "IEntity.h"
 
-class TaskManager;
-class IEntity;
-class IEvent;
-class IScene;
-
-class ITask : public IElement
+class TaskManager : public ITaskManager
 {
 public:
-	virtual void Start() {}
-	virtual void Stop() {}
-	virtual void OnTask() = 0;
-	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
-	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
+	virtual void UpdateTasks();
+	virtual void AddTask(WonderPtr<ITask> task);
+	virtual void StartTask(WonderPtr<ITask> task);
+	virtual void StopTask(WonderPtr<ITask> task);
+protected:
+	// todo: change to more appropriate data structure
+	std::vector<WonderPtr<ITask>>	_tasks;
+	std::vector<WonderPtr<ITask>> _runningTasks;
 
-public:
-	IScene*					scene;
-	TaskManager*			taskManager;
-	std::vector<WonderPtr<IEntity>>		entities;
-	std::vector<WonderPtr<IEntity>>		tasks;
+	WonderPtr<ITask> _SearchTask(WonderPtr<ITask> task);
+	bool _RemoveRunningTask(WonderPtr<ITask> task);
 };
 
-#endif // __ITASK_H__
+#endif // __TASK_MANAGER_H__

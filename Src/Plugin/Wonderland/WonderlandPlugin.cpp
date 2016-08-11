@@ -26,30 +26,32 @@
  *
  */
 
-#ifndef __ITASK_H__
-#define __ITASK_H__
+#include "WonderlandPlugin.h"
+#include "IScene.h"
+#include "SceneManager.h"
+#include "Utility/Log/Log.h"
+#include "Florist.h"
 
-#include "IElement.h"
-
-class TaskManager;
-class IEntity;
-class IEvent;
-class IScene;
-
-class ITask : public IElement
+void WonderlandPlugin::Create(WonderPtr<IApplication>	application)
 {
-public:
-	virtual void Start() {}
-	virtual void Stop() {}
-	virtual void OnTask() = 0;
-	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
-	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
+	// Create log
+	Log::GetPtr()->Create("Wonderland.log");
 
-public:
-	IScene*					scene;
-	TaskManager*			taskManager;
-	std::vector<WonderPtr<IEntity>>		entities;
-	std::vector<WonderPtr<IEntity>>		tasks;
-};
+	LogDebug("Create WonderlandPlugin");
 
-#endif // __ITASK_H__
+	// Application
+	this->application = application;
+
+	// Scene manager
+	application->sceneManager = CreateElement<SceneManager>().To<ISceneManager>();
+
+	// Create application
+	application->Create();
+	application->sceneManager->GetCurrentScene()->Create();
+}
+
+void WonderlandPlugin::Update()
+{
+    application->sceneManager->OnChangeScene();
+    application->sceneManager->GetCurrentScene()->taskManager->UpdateTasks();
+}

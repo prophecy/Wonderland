@@ -26,30 +26,29 @@
  *
  */
 
-#ifndef __ITASK_H__
-#define __ITASK_H__
+#ifndef __SCENE_MANAGER_H__
+#define __SCENE_MANAGER_H__
 
-#include "IElement.h"
+#include "Utility/Utility.h"
+#include "ISceneManager.h"
 
-class TaskManager;
-class IEntity;
-class IEvent;
 class IScene;
 
-class ITask : public IElement
+// Scenes are in the Application
+class SceneManager : public ISceneManager
 {
 public:
-	virtual void Start() {}
-	virtual void Stop() {}
-	virtual void OnTask() = 0;
-	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
-	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
+	u32 AddScene(WonderPtr<IScene> scene);
+	void RemoveScene(u32 sceneId);
+	void StartScene(WonderPtr<IScene> scene);
+	void SetNextScene(u32 sceneCode);
+	WonderPtr<IScene> GetCurrentScene();
+	virtual void OnChangeScene();
 
-public:
-	IScene*					scene;
-	TaskManager*			taskManager;
-	std::vector<WonderPtr<IEntity>>		entities;
-	std::vector<WonderPtr<IEntity>>		tasks;
+private:
+	WonderPtr<IScene> _currentScene;
+	WonderPtr<IScene> _previousScene;
+	std::map<u32, WonderPtr<IScene>>	_sceneMap;
 };
 
-#endif // __ITASK_H__
+#endif // __SCENE_MANAGER_H__

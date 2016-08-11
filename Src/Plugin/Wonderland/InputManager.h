@@ -26,30 +26,24 @@
  *
  */
 
-#ifndef __ITASK_H__
-#define __ITASK_H__
+#ifndef __INPUT_MANAGER_H__
+#define __INPUT_MANAGER_H__
 
-#include "IElement.h"
+#include "Utility/Singleton.h"
+#include "IInput.h"
 
-class TaskManager;
-class IEntity;
-class IEvent;
-class IScene;
-
-class ITask : public IElement
+class InputManager : public Singleton<InputManager>
 {
 public:
-	virtual void Start() {}
-	virtual void Stop() {}
-	virtual void OnTask() = 0;
-	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
-	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
 
-public:
-	IScene*					scene;
-	TaskManager*			taskManager;
-	std::vector<WonderPtr<IEntity>>		entities;
-	std::vector<WonderPtr<IEntity>>		tasks;
+	void AddInput(IInput* input);
+	s32 RemoveInput(s32 index);
+	void ClearInputs();
+	IInput* GetInput(s32 index);
+
+	void PollEventStart();
+	void PollEventUpdate();
+	void PollEventFinish();
 };
 
-#endif // __ITASK_H__
+#endif // __INPUT_MANAGER_H__

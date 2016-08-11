@@ -26,30 +26,64 @@
  *
  */
 
-#ifndef __ITASK_H__
-#define __ITASK_H__
+#include "InputManager.h"
+#include <vector>
 
-#include "IElement.h"
+using namespace std;
 
-class TaskManager;
-class IEntity;
-class IEvent;
-class IScene;
+static vector<IInput*> _s_inputs;
 
-class ITask : public IElement
+void InputManager::AddInput(IInput* input)
 {
-public:
-	virtual void Start() {}
-	virtual void Stop() {}
-	virtual void OnTask() = 0;
-	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
-	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
+	_s_inputs.push_back(input);
+}
 
-public:
-	IScene*					scene;
-	TaskManager*			taskManager;
-	std::vector<WonderPtr<IEntity>>		entities;
-	std::vector<WonderPtr<IEntity>>		tasks;
-};
+s32 InputManager::RemoveInput(s32 index)
+{
+	if (index >= (s32)_s_inputs.size())
+		return -1;
 
-#endif // __ITASK_H__
+	vector<IInput*> tmpInputs;
+
+	for (u32 i = 0; i < _s_inputs.size(); ++i)
+		if (i != index)
+			tmpInputs.push_back(_s_inputs[i]);
+
+	_s_inputs = tmpInputs;
+
+	return 0;
+}
+
+void InputManager::ClearInputs()
+{
+	_s_inputs.clear();
+}
+
+IInput* InputManager::GetInput(s32 index)
+{
+	if (index > (s32)_s_inputs.size())
+		return NULL;
+
+	return _s_inputs[index];
+}
+
+void InputManager::PollEventStart()
+{
+	vector<IInput*>::iterator it = _s_inputs.begin();
+	for (; it != _s_inputs.end(); ++it)
+		(*it)->PollEventStart();
+}
+
+void InputManager::PollEventUpdate()
+{
+	vector<IInput*>::iterator it = _s_inputs.begin();
+	for (; it != _s_inputs.end(); ++it)
+		(*it)->PollEventUpdate();
+}
+
+void InputManager::PollEventFinish()
+{
+	vector<IInput*>::iterator it = _s_inputs.begin();
+	for (; it != _s_inputs.end(); ++it)
+		(*it)->PollEventFinish();
+}

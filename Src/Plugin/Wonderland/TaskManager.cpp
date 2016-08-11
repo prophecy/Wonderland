@@ -26,30 +26,59 @@
  *
  */
 
-#ifndef __ITASK_H__
-#define __ITASK_H__
+#include "TaskManager.h"
+#include "ITask.h"
 
-#include "IElement.h"
-
-class TaskManager;
-class IEntity;
-class IEvent;
-class IScene;
-
-class ITask : public IElement
+void TaskManager::UpdateTasks()
 {
-public:
-	virtual void Start() {}
-	virtual void Stop() {}
-	virtual void OnTask() = 0;
-	virtual void OnEvent(WonderPtr<IEvent> evt, s32 code, std::string message) {} // Optional
-	virtual void OnEvent(WonderPtr<IEvent> evt, s8* data) {} // Optional
+	for (u32 i = 0; i < _runningTasks.size(); ++i)
+	{
+		_runningTasks[i]->OnTask();
+	}
+}
 
-public:
-	IScene*					scene;
-	TaskManager*			taskManager;
-	std::vector<WonderPtr<IEntity>>		entities;
-	std::vector<WonderPtr<IEntity>>		tasks;
-};
+void TaskManager::AddTask(WonderPtr<ITask> task)
+{
+	_tasks.push_back(task);
+	task->taskManager	= this;
+}
 
-#endif // __ITASK_H__
+void TaskManager::StartTask(WonderPtr<ITask> task)
+{
+	_runningTasks.push_back(task);
+	task->Start();
+}
+
+void TaskManager::StopTask(WonderPtr<ITask> task)
+{
+	task->Stop();
+	_RemoveRunningTask(task);
+}
+
+// todo: need better search algorithm
+WonderPtr<ITask> TaskManager::_SearchTask(WonderPtr<ITask> task)
+{
+	for ( u32 i = 0; i < _tasks.size(); ++i )
+	{
+		if ( _tasks[i] == task )
+		{
+			return _tasks[i];
+		}
+	}
+
+	return NULL;
+}
+
+bool TaskManager::_RemoveRunningTask(WonderPtr<ITask> task)
+{
+	std::vector<WonderPtr<ITask>>::iterator it;
+	for ( it = _runningTasks.begin(); it != _runningTasks.end(); ++it )
+	{
+		if ( *it == task )
+		{
+			_runningTasks.erase(it);
+			return true;
+		}
+	}
+	return false;
+}
