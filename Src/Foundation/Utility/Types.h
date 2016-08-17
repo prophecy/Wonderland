@@ -33,18 +33,25 @@
 #define WONDERLAND_PLATFORM_WINDOWS		1
 #define WONDERLAND_PLATFORM_IOS			2
 #define WONDERLAND_PLATFORM_ANDROID		3
+#define WONDERLAND_PLATFORM_MAC         4
 
 #define WONDERLAND_ACTIVE_PLATFORM		WONDERLAND_PLATFORM_NONE
 
 #define MEM_POOL_DEBUG
 
 #if defined( __APPLE_CC__)
-// Device                                                     Simulator
-// Both requiring OS version 5.0 or greater
+#   include "TargetConditionals.h"
+/*  // Complicated way to detect iOS devices
 #   if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 50000 || __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
 #		undef WONDERLAND_ACTIVE_PLATFORM	
 #       define WONDERLAND_ACTIVE_PLATFORM	WONDERLAND_PLATFORM_IOS
-#	endif
+*/
+#   if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+#       define WONDERLAND_ACTIVE_PLATFORM	WONDERLAND_PLATFORM_IOS
+#   elif TARGET_OS_MAC
+#       undef WONDERLAND_ACTIVE_PLATFORM
+#       define WONDERLAND_ACTIVE_PLATFORM	WONDERLAND_PLATFORM_MAC
+#   endif
 #elif defined( __WIN32__ ) || defined( _WIN32 )
 #	undef WONDERLAND_ACTIVE_PLATFORM
 #	define WONDERLAND_ACTIVE_PLATFORM	WONDERLAND_PLATFORM_WINDOWS
@@ -69,11 +76,11 @@
 // Typedef
 #if WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_WINDOWS
 
-#if _WIN64
-    typedef unsigned __int64	addr;
-#else
-    typedef unsigned __int32	addr;
-#endif
+#   if _WIN64
+        typedef unsigned __int64	addr;
+#   else
+        typedef unsigned __int32	addr;
+#   endif
 
 	typedef __int8              s8;
 	typedef __int16             s16;
@@ -100,13 +107,13 @@
 
 	typedef size_t				size_t;
 
-#elif WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_IOS
+#elif WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_IOS || WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_MAC
 
-#if __x86_64__ || __ppc64__ || __LP64__
-    typedef	unsigned long		addr;
-#else
-    typedef	unsigned int		addr;
-#endif
+#   if __x86_64__ || __ppc64__ || __LP64__
+        typedef	unsigned long		addr;
+#   else
+        typedef	unsigned int		addr;
+#   endif
 
 	typedef	unsigned char		s8;
 	typedef short int			s16;

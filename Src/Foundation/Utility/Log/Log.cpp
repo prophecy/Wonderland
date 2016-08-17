@@ -42,7 +42,7 @@ THE SOFTWARE.
 #	define LOGI(TAG, MSG) __android_log_print(ANDROID_LOG_INFO   , TAG, "%s", MSG)
 #	define LOGW(TAG, MSG) __android_log_print(ANDROID_LOG_WARN   , TAG, "%s", MSG)
 #	define LOGE(TAG, MSG) __android_log_print(ANDROID_LOG_ERROR  , TAG, "%s", MSG)
-#elif WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_IOS
+#elif WONDERLAND_ACTIVE_PLATFORM == WONDERLAND_PLATFORM_IOS || WONDERLAND_PLATFORM_MAC
 #   include <iostream>
 #	define LOGV(TAG, MSG)	{}
 #	define LOGD(TAG, MSG)	{ std::cout << TAG << " : " << MSG << std::endl; }
